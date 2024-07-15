@@ -1,0 +1,12 @@
+# Dist
+dist
+
+# env
+.env
+.vscode
+
+# npm
+node_modules
+
+# Tests
+test.*
