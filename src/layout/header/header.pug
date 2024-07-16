@@ -1,2 +1,29 @@
+include layout/utils
+
+-
+    var menu = [
+        {
+            title: 'О компании',
+            list: ['Книга', 'Франшиза']
+        },
+        {
+            title: 'Услуги',
+            list: ['Услуга 1', 'Услуга 2', 'Услуга 3', 'Услуга 4']
+        },
+        { title: 'Партнёрам' },
+        { title: 'Калькулятор' },
+        { title: 'Медиацентр' },
+        { title: 'Контакты' }
+    ]
+
 header.header
     .container
+        .header-content
+            +anchor('/').header__logo
+                +img(require('assets/icons/logo.png'))
+            button.header__button-menu
+            include layout/menu/menu
+            .header__tel
+                +anchor('tel:8 495 190 79 91').header__tel-number 8 495 190 79 91
+                +popupBtn('call').header__tel-button Заказать звонок
+            +anchor.header__button Вход / Регистрация

@@ -1,0 +1,31 @@
+include layout/utils
+
+-
+    var menu = [
+        {
+            title: 'О компании',
+            list: ['Книга', 'Франшиза']
+        },
+        {
+            title: 'Услуги',
+            list: ['Услуга 1', 'Услуга 2', 'Услуга 3', 'Услуга 4']
+        },
+        { title: 'Партнёрам' },
+        { title: 'Калькулятор' },
+        { title: 'Медиацентр' },
+        { title: 'Контакты' }
+    ]
+
+nav.menu
+    ul.menu-list
+        each item in menu
+            if 'list' in item
+                li.menu-item= item.title
+                    .submenu.hidden
+                        ul.submenu-list
+                            each sub in item.list
+                                li.submenu-item
+                                    +anchor= sub
+            else
+                li.menu-item
+                    +anchor= item.title
