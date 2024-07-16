@@ -1,2 +1,24 @@
 footer.footer
     .container
+        .footer-content
+            +anchor('/').footer__logo
+                +img(require('assets/icons/logo.png'))
+            include layout/menu/menu
+            .footer__contacts
+                +anchor('tel:8 495 190 79 91').footer__contacts-tel 8 495 190 79 91
+                +anchor('mailto:info@sfc24.ru').footer__contacts-email info@sfc24.ru
+                .footer__contacts-address Московская обл., Раменское, ул. Карла Маркса, 5, оф. 218а
+            +popupBtn('call').footer__button Получить консультацию
+        .footer-bottom
+            .footer__info © 2000 - 2024 ООО «СОФИК»
+            +anchor.footer__policy Политика конфиденциальности и условия обработки персональных данных
+            ul.footer__socials
+                +anchor.footer__socials-item
+                    +img(require('assets/icons/ok.svg'))
+                +anchor.footer__socials-item
+                    +img(require('assets/icons/vk.svg'))
+                +anchor.footer__socials-item
+                    +img(require('assets/icons/dzen.svg'))
+            .footer__aaccent Разработано
+                +anchor('https://www.aaccent.ru/')
+                    +img(require('assets/icons/aaccent-logo.svg'))

@@ -1,0 +1,172 @@
+@use 'styles/utils';
+
+.footer {
+    background-color: var(--gray);
+    padding: 60px 0;
+
+    &-content {
+        display: flex;
+        align-items: start;
+        margin-bottom: 100px;
+    }
+
+    &__logo {
+        margin-right: 176px;
+        width: 204px;
+    }
+
+    .menu {
+        max-width: 512px;
+        margin-right: 135px;
+
+        &-list {
+            row-gap: 30px;
+        }
+
+        &-item {
+            background-color: var(--white);
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-right: 108px;
+        max-width: 395px;
+        width: 100%;
+        font-size: 2.4rem;
+
+        &-address {
+            font-size: 2rem;
+        }
+
+        &-tel,
+        &-email,
+        &-address {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &:before {
+                @include utils.bg-defaults(auto);
+                @include utils.square(24px);
+                content: '';
+                display: block;
+            }
+        }
+
+        &-tel:before {
+            background-image: url('assets/icons/phone.svg');
+        }
+        &-email:before {
+            background-image: url('assets/icons/mail.svg');
+        }
+        &-address:before {
+            @include utils.square(37px);
+            @include utils.bg-defaults();
+            background-image: url('assets/icons/address.svg');
+        }
+    }
+
+    &__button {
+        padding: 24px 30px;
+        background-color: var(--382C);
+        border-radius: 20px;
+        font-size: 1.8rem;
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__info,
+    &__policy {
+        font-size: 1.8rem;
+        opacity: 0.5;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    &__aaccent {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .footer {
+        padding: 50px 0;
+
+        &-content {
+            flex-direction: column;
+            margin: 0 0 20px;
+        }
+
+        &__logo {
+            margin: 0 0 30px;
+        }
+
+        .menu {
+            display: block;
+            position: static;
+            margin: 0;
+            padding: 0;
+            height: fit-content;
+            width: 100%;
+            z-index: 0;
+        }
+
+        &__contacts {
+            margin: 30px 0 0;
+            gap: 20px;
+
+            &-address {
+                order: 1;
+            }
+
+            &-tel {
+                order: 2;
+            }
+
+            &-email {
+                order: 3;
+            }
+        }
+
+        &__button {
+            display: none;
+        }
+
+        &-bottom {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &__socials {
+            order: 1;
+            margin: 0 0 30px;
+        }
+
+        &__aaccent {
+            display: none;
+        }
+
+        &__policy {
+            order: 2;
+            margin: 0 0 20px;
+        }
+
+        &__info {
+            order: 3;
+        }
+    }
+}
