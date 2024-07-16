@@ -17,7 +17,7 @@ module.exports = {
                 // prettier-ignore
                 { width: 1920 },
                 { width: 375, mediaQuery: 'only screen and (max-width: 600px)' },
-                { width: 700, mediaQuery: 'only screen and (max-width: 1000px)' },
+                { width: 1000, mediaQuery: 'only screen and (max-width: 1000px)' },
             ],
         }),
     ],
