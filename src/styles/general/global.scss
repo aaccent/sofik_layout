@@ -6,10 +6,45 @@ html {
     scroll-behavior: smooth;
 }
 
+.section {
+    padding: 150px 0;
+    position: relative;
+    width: 100%;
+
+    &--black {
+        background-color: var(--black);
+        color: var(--white);
+    }
+
+    & + & {
+        border-top: 1px solid hsla(0, 0%, 7%, 0.15);
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &-wrapper {
+        background-color: var(--black);
+        color: var(--white);
+
+        .section {
+            padding: 0;
+            border: none;
+
+            .container {
+                padding-top: 150px;
+                padding-bottom: 150px;
+                border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+            }
+        }
+    }
+}
+
 .container {
     margin: 0 auto;
-    padding: 0 15px;
-    max-width: 1230px;
+    padding: 0 30px;
+    max-width: 1860px;
 }
 
 .main-wrapper {
@@ -30,6 +65,8 @@ html {
 
 body {
     overflow-x: clip;
+    color: var(--black);
+    font: 400 2rem var(--manrope);
 }
 
 html.disable-scroll {
@@ -46,14 +83,23 @@ html.disable-scroll {
     box-sizing: border-box !important;
 }
 
-.content {
-    p + p {
-        margin-top: 15px;
+@media only screen and (max-width: utils.$tablet1000) {
+    .container {
+        padding: 0 10px;
     }
 
-    @media only screen and (max-width: utils.$tablet1200) {
-        p + p {
-            margin-top: 12px;
+    .section {
+        padding: 50px 0;
+
+        &-wrapper {
+            .section {
+                padding: 50px 0;
+
+                .container {
+                    border: none;
+                    padding: 0;
+                }
+            }
         }
     }
 }
