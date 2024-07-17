@@ -1,0 +1,141 @@
+@use 'styles/utils';
+
+.header {
+    padding: 30px;
+
+    .container {
+        border: 1px solid hsla(0, 0%, 7%, 0.1);
+        border-radius: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 204px;
+        width: 100%;
+        margin-right: 59px;
+    }
+
+    &__button-menu {
+        display: none;
+        background-color: var(--gray);
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 56px;
+        height: 44px;
+
+        &:after {
+            content: '';
+            @include utils.bg-defaults(auto);
+            @include utils.square(24px);
+            background-image: url('assets/icons/three-lines.svg');
+        }
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .menu {
+        max-width: 991px;
+        width: 100%;
+    }
+
+    &__tel {
+        position: relative;
+        margin: 0 70px 0 59px;
+        text-wrap: nowrap;
+
+        &::before {
+            @include utils.bg-defaults(cover);
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include utils.square(24px);
+            background-image: url('assets/icons/phone.svg');
+        }
+
+        &-number {
+            display: block;
+            font-size: 2.4rem;
+        }
+
+        &-button {
+            opacity: 0.5;
+        }
+    }
+
+    &__button {
+        padding: 24px 30px;
+        background-color: var(--382C);
+        border-radius: 20px;
+        margin-left: auto;
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .header {
+        padding: 0;
+
+        .container {
+            border: none;
+            padding-top: 21px;
+            padding-bottom: 21px;
+            border-bottom: 1px solid hsla(0, 0%, 7%, 0.1);
+            border-radius: 0;
+        }
+
+        &-content {
+            justify-content: space-between;
+        }
+
+        &__button-menu {
+            display: flex;
+            order: 3;
+
+            &._menu-opened:after {
+                background-image: url('assets/icons/close.svg');
+            }
+
+            &._menu-opened ~ .menu,
+            &._menu-opened ~ .header__button {
+                display: block;
+            }
+        }
+
+        &__logo {
+            width: 102px;
+            margin: 0;
+        }
+
+        &__button {
+            position: fixed;
+            left: 10px;
+            right: 10px;
+            bottom: 30px;
+            text-align: center;
+            padding: 20px 0;
+            z-index: 10;
+            display: none;
+        }
+
+        &__tel {
+            margin: 0;
+
+            &-number {
+                font-size: 1.6rem;
+            }
+
+            &-button {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

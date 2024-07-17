@@ -1,0 +1,109 @@
+@use 'styles/utils';
+
+.menu {
+    &-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        row-gap: 10px;
+    }
+
+    &-item {
+        padding: 10px 14px;
+        background-color: hsla(0, 0%, 97%, 1);
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &:has(.submenu) {
+            &:after {
+                @include utils.bg-defaults();
+                content: '';
+                display: block;
+                width: 18px;
+                height: 18px;
+                background-image: url('../../assets/icons/two-lines.svg');
+            }
+
+            &._opened:after {
+                background-image: url('../../assets/icons/close.svg');
+            }
+
+            &._opened {
+                .submenu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.submenu {
+    position: absolute;
+    z-index: 10;
+    width: 286px;
+    border: 1px solid hsla(0, 0%, 7%, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--white);
+    left: -10px;
+    top: 117%;
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &-item {
+        padding: 10px;
+        border-radius: 10px;
+
+        a {
+            display: block;
+            width: 100%;
+        }
+
+        &:hover {
+            background-color: var(--gray);
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .menu {
+        position: fixed;
+        background-color: var(--gray);
+        left: 0;
+        right: 0;
+        top: 94px;
+        z-index: 10;
+        height: 100svh;
+        padding: 30px 10px;
+        display: none;
+
+        &-list {
+            flex-direction: column;
+            row-gap: 20px;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &-item {
+            background-color: var(--white);
+            width: 100%;
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+
+    .submenu {
+        left: unset;
+        right: 14px;
+    }
+}
