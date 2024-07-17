@@ -1,0 +1,159 @@
+@use 'styles/utils';
+
+.stages {
+    border: solid hsl(0, 0%, 7%, .15);
+    border-width: 1px 0;
+
+    .title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        gap: 10px;
+        padding-bottom: 200px;
+        width: 100%;
+        display: flex;
+        counter-reset: stages 0;
+    }
+
+    &__list-item {
+        --progress: 100%;
+        --dot-progress: 0;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        counter-increment: stages 1;
+    }
+
+    &__item-number {
+        display: flex;
+        align-items: center;
+        color: hsla(0, 0%, 7%, 0.5);
+
+        &::before {
+            content: "";
+            @include utils.square(24px);
+            background-image: url("assets/icons/check.svg");
+            @include utils.bg-defaults;
+            margin-right: 10px;
+            display: block;
+        }
+
+        &::after {
+            content: counter(stages, decimal);
+            margin-left: 5px;
+        }
+    }
+
+    &__item-text {
+        margin: 10px 0 20px;
+        font-size: 2.4rem;
+    }
+
+    &__item-line {
+        gap: 10px;
+        position: relative;
+        width: 100%;
+        height: 20px;
+        display: flex;
+        align-items: center;
+
+        span:first-child {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            background-color: var(--gray);
+            border-radius: 100px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: var(--progress);
+                height: 100%;
+                display: block;
+                background-color: var(--375C);
+                @include utils.transition(width);
+            }
+        }
+    }
+
+    &__list-item:has(&__item-arrow) &__item-line span:last-child {
+        position: relative;
+        width: 20px;
+        height: 100%;
+        display: block;
+        flex-shrink: 0;
+        overflow: hidden;
+        background-color: var(--gray);
+        border-radius: 100%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: var(--dot-progress);
+            height: 100%;
+            background-color: var(--375C);
+            @include utils.transition(width);
+        }
+    }
+
+    &__list-item:has(&__item-arrow span:empty) &__item-line span:last-child {
+        display: none;
+    }
+
+    &__list-item--active &__item-arrow {
+        span {
+            position: relative;
+            right: 35px;
+            opacity: 1;
+            color: var(--370C);
+        }
+
+        &::before {
+            background-image: url("assets/static/active-arrow.svg");
+            width: 45px;
+            height: 114px;
+            position: relative;
+            right: 11px;
+        }
+    }
+
+    &__item-arrow {
+        position: absolute;
+        right: 10px;
+        bottom: -180px;
+        translate: 50% 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:has(span:empty) {
+            display: none;
+        }
+
+        span {
+            max-width: 200px;
+            height: 52px;
+            font-family: var(--neucha);
+            text-align: center;
+            opacity: 0.3;
+            @include utils.transition(right);
+        }
+
+        &::before {
+            content: "";
+            width: 17px;
+            height: 112px;
+            background-image: url("assets/static/rest-arrow.svg");
+            @include utils.bg-defaults;
+            @include utils.transition((right, width));
+        }
+    }
+}

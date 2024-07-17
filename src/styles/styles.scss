@@ -7,8 +7,12 @@
 // Popup
 @use 'features/popup/popup';
 
+// Components
+@use "components/stages/stages";
+
 // Ui
 @use 'ui/buttons/close-btn';
+@use "ui/title";
 
 // Page
 @use 'layout/header/header';
