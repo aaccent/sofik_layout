@@ -1,0 +1,49 @@
+include layout/utils
+
+-
+    var options = {
+        guarantee: [
+            'Возврат аванса',
+            'Исполнение контракта',
+            'Гарантийные обязательства',
+            'На участие в торгах',
+        ],
+        law: [
+            '44 - ФЗ',
+            '223 - ФЗ',
+            'ПП - 615(185 - ФЗ)',
+            'Коммерческий контракт',
+        ]
+    }
+
++section.section--black.calculator
+    h2.section__title Калькулятор банковской гарантии
+    .calculator-content
+        .calculator__form
+            .calculator__field._amount
+                .calculator__field-title Сумма гарантии
+                input.calculator__field-input(name='amount')
+            .calculator__field._period
+                input._hidden(type='date')
+                .calculator__field-title Срок гарантии
+                input.calculator__field-input(name='period')
+            .calculator__field._result
+                output.calculator__field-output 0 ₽
+                .calculator__field-info
+                    .calculator__field-rate 1.5% годовых
+                    .calculator__field-icon
+                    .calculator__field-tooltip
+                        .calculator__field-tooltip-text Минимальная процентная ставка банка за услугу банковской гарантии
+            +popupBtn('call').calculator__form-button Отправить заявку
+        .calculator-options
+            .calculator__selector
+                .calculator__selector-selected Федеральный закон
+                ul.calculator__selector-options
+                    each item in options.law
+                        li.calculator__selector-options-item= item
+            .calculator__selector
+                .calculator__selector-selected Гарантия
+                ul.calculator__selector-options
+                    each item in options.guarantee
+                        li.calculator__selector-options-item= item
+        .calculator__info Расчет стоимости не является публичной офертой

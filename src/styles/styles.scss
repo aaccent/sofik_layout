@@ -9,7 +9,11 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/title';
 
 // Page
 @use 'layout/header/header';
 @use 'layout/footer/footer';
+
+//Components
+@use 'components/calculator/calculator';
