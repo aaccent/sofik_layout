@@ -5,8 +5,7 @@ block append head
     link(href=require('./styles.scss'), rel='stylesheet')
 
 block append main
-    +section
-        p hello
+    include components/main-hero/main-hero
 
 block append scripts
     script(src=require('./main.ts'))
