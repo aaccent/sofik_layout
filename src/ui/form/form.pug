@@ -1,0 +1,11 @@
+include layout/utils
+
+form.form
+    +wrapBreak: input.input(type='text', name='name', placeholder='Ваше имя')
+    +wrapBreak: input.input(type='tel', name='tel', placeholder='Ваш номер')
+    +wrapBreak: button.button(type='submit') Получить консультацию
+    .form__privacy
+        | Нажимая на кнопку «получить консультацию» вы подтверждаете
+        | своё согласие с
+        a(href='#') политикой конфиденциальности
+        | сайта
