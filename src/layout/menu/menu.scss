@@ -2,30 +2,30 @@
 
 .menu {
     &-list {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
         gap: 30px;
         row-gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     &-item {
+        gap: 10px;
+        position: relative;
         padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         background-color: hsla(0, 0%, 97%, 1);
         border-radius: 10px;
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        gap: 10px;
-        align-items: center;
 
         &:has(.submenu) {
             &:after {
                 @include utils.bg-defaults();
                 content: '';
-                display: block;
                 width: 18px;
                 height: 18px;
+                display: block;
                 background-image: url('../../assets/icons/two-lines.svg');
             }
 
@@ -45,18 +45,18 @@
 .submenu {
     position: absolute;
     z-index: 10;
-    width: 286px;
-    border: 1px solid hsla(0, 0%, 7%, 0.15);
-    border-radius: 20px;
-    padding: 20px;
-    background-color: var(--white);
-    left: -10px;
     top: 117%;
+    left: -10px;
+    padding: 20px;
+    width: 286px;
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid hsla(0, 0%, 7%, 0.15);
 
     &-list {
+        gap: 10px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
     }
 
     &-item {
@@ -64,8 +64,8 @@
         border-radius: 10px;
 
         a {
-            display: block;
             width: 100%;
+            display: block;
         }
 
         &:hover {
@@ -77,33 +77,33 @@
 @media only screen and (max-width: utils.$tablet1000) {
     .menu {
         position: fixed;
-        background-color: var(--gray);
-        left: 0;
-        right: 0;
-        top: 94px;
         z-index: 10;
-        height: 100svh;
+        top: 94px;
+        right: 0;
+        left: 0;
         padding: 30px 10px;
+        height: 100svh;
         display: none;
+        background-color: var(--gray);
 
         &-list {
-            flex-direction: column;
             row-gap: 20px;
             width: 100%;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
         }
 
         &-item {
-            background-color: var(--white);
-            width: 100%;
             gap: 0;
+            width: 100%;
             justify-content: space-between;
+            background-color: var(--white);
         }
     }
 
     .submenu {
-        left: unset;
         right: 14px;
+        left: unset;
     }
 }

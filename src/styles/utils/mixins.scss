@@ -10,8 +10,8 @@
     @include reset-list;
     li {
         padding-left: 0;
-        text-indent: initial;
         color: var(--body_font);
+        text-indent: initial;
 
         &::before {
             display: none;
@@ -23,9 +23,9 @@
 }
 
 @mixin transition($property, $duration: 0.3s, $timing: ease-in-out) {
-    transition-property: $property;
     transition-timing-function: $timing;
     transition-duration: $duration;
+    transition-property: $property;
 }
 
 @mixin square($size) {

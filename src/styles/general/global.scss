@@ -1,19 +1,19 @@
 @use 'styles/utils';
 
 html {
+    scroll-behavior: smooth;
     overflow-x: clip;
     font-size: 62.5%;
-    scroll-behavior: smooth;
 }
 
 .section {
-    padding: 150px 0;
     position: relative;
+    padding: 150px 0;
     width: 100%;
 
     &--black {
-        background-color: var(--black);
         color: var(--white);
+        background-color: var(--black);
     }
 
     & + & {
@@ -25,8 +25,8 @@ html {
     }
 
     &-wrapper {
-        background-color: var(--black);
         color: var(--white);
+        background-color: var(--black);
 
         .section {
             padding: 0;
@@ -48,10 +48,10 @@ html {
 
 .main-wrapper {
     position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
 }
 
 .main {
@@ -95,8 +95,8 @@ html.disable-scroll {
                 padding: 50px 0;
 
                 .container {
-                    border: none;
                     padding: 0;
+                    border: none;
                 }
             }
         }
