@@ -42,8 +42,8 @@ html {
 }
 
 .container {
-    margin: 0 auto;
     --container-padding: 30px;
+    margin: 0 auto;
     padding: 0 var(--container-padding);
 }
 
@@ -84,7 +84,7 @@ html.disable-scroll {
 }
 
 .section-border {
-    border: solid hsl(0, 0%, 7%, .15);
+    border: solid hsl(0, 0%, 7%, 0.15);
     border-width: 1px 0;
 }
 

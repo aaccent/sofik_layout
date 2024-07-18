@@ -6,6 +6,6 @@ new Swiper('.our-clients .swiper', {
     breakpoints: {
         1200: {
             slidesPerView: 5.85,
-        }
-    }
+        },
+    },
 })
