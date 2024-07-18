@@ -5,8 +5,8 @@ block append head
     link(href=require('./styles.scss'), rel='stylesheet')
 
 block append main
-    +section
-        p hello
+    include components/stages/stages
+    +stages
 
 block append scripts
     script(src=require('./main.ts'))
