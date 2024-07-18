@@ -4,3 +4,4 @@ import '@/layout/menu/menu.js'
 
 import '@/components/main-hero/main-hero.js'
 import '@/components/our-clients/our-clients.js'
+import '@/components/our-projects/our-projects.js'

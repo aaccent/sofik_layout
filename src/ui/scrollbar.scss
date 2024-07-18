@@ -1,0 +1,15 @@
+@use 'styles/utils';
+
+.scrollbar {
+    position: static;
+    height: 14px !important;
+    overflow: hidden;
+    background-color: var(--gray);
+    border-radius: 14px;
+
+    .swiper-scrollbar-drag {
+        display: block;
+        background-color: var(--black);
+        border-radius: 14px;
+    }
+}

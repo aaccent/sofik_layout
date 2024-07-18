@@ -13,15 +13,15 @@
 @use 'features/popup/popup';
 
 // Components
+@use 'components/main-hero/main-hero';
 @use 'components/stages/stages';
 @use 'components/our-clients/our-clients';
+@use 'components/our-projects/our-projects';
 
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/title';
-
-// Components
-@use 'components/main-hero/main-hero';
+@use 'ui/scrollbar';
 
 // Page
 @use 'layout/header/header';
