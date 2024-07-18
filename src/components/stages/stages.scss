@@ -17,6 +17,9 @@
     }
 
     &__list-item {
+        // --progress меняет длинную полоску.
+        // --dot-progress меняет точку после полоски.
+        // Можно добавить класс .stages__list-item--active для смены стрелки и цвета текста
         --progress: 100%;
         --dot-progress: 0;
         position: relative;
@@ -24,6 +27,12 @@
         display: flex;
         flex-direction: column;
         counter-increment: stages 1;
+    }
+
+    &__list-item:not(&__list-item--active) &__item-number {
+        &::before {
+            display: none;
+        }
     }
 
     &__item-number {
@@ -154,6 +163,44 @@
             background-image: url("assets/static/rest-arrow.svg");
             @include utils.bg-defaults;
             @include utils.transition((right, width));
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .stages {
+        padding-bottom: 75px;
+        .title {
+            margin-bottom: 64px;
+        }
+
+        &__list {
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 0;
+        }
+
+        &__list-item:has(&__item-arrow) &__item-line span:last-child {
+            display: none;
+        }
+
+        &__item-line {
+        }
+
+        &__list-item--active &__item-arrow {
+            span {
+                position: static;
+            }
+        }
+
+        &__item-arrow {
+            margin-top: 20px;
+            position: static;
+            translate: 0;
+
+            &::before {
+                display: none;
+            }
         }
     }
 }
