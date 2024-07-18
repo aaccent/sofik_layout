@@ -6,11 +6,11 @@
     background-color: var(--black);
 
     &::before {
-        filter: blur(1000px);
         content: '';
         position: absolute;
         top: -29px;
         right: 0;
+        filter: blur(1000px);
         @include utils.square(718px);
         opacity: 0.2;
         background: var(--375C);
@@ -18,10 +18,10 @@
     }
 
     .container {
-        gap: 30px;
         position: relative;
         z-index: 1;
         display: flex;
+        gap: 30px;
         justify-content: space-between;
     }
 
