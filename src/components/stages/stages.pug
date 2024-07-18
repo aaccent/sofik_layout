@@ -1,0 +1,45 @@
+include layout/utils
+
+-
+    list = [
+        {
+            text: 'Звонок менеджеру',
+            arrow: 'Сбор необходимых документов',
+            isActive: true,
+        },
+        {
+            text: 'Подача заявки',
+            arrow: 'Обработка<br>данных банком',
+        },
+        {
+            text: 'Получение предложения',
+            arrow: 'Согласование<br>макета с заказчиком',
+        },
+        {
+            text: 'Оплата комиссии банку',
+            arrow: 'Получение<br>банковской гарантии',
+        },
+        {
+            text: 'Подписание контракта',
+            arrow: '',
+        },
+    ]
+
+mixin stages(props)
+    -
+        props = Object.assign({
+            list: list
+        }, props)
+
+    +section.stages.section-border
+        h2.title Схема получения банковской гарантии
+        ul.stages__list
+            each stage in props.list
+                li(class=stage.isActive ? 'stages__list-item stages__list-item--active' : 'stages__list-item')
+                    // Номер шага добавляется автоматически через CSS
+                    +wrapBreak: span.stages__item-number Шаг
+                    +wrapBreak: span.stages__item-text= stage.text
+                    +wrapBreak: span.stages__item-line
+                        span
+                        span
+                    +wrapBreak: span.stages__item-arrow: span!= stage.arrow

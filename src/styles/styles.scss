@@ -3,12 +3,18 @@
 @use 'general/variables';
 @use 'general/fonts';
 @use 'general/global';
+@use 'node_modules/swiper/swiper';
 
 // Popup
 @use 'features/popup/popup';
 
+// Components
+@use 'components/stages/stages';
+@use 'components/our-clients/our-clients';
+
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/title';
 
 // Components
 @use 'components/main-hero/main-hero';

@@ -30,6 +30,7 @@ const longHandProps = [
     'row-gap',
     '--diameter',
     '--size',
+    '--container-padding',
 ]
 
 const targetProps = [...shorthandProps, ...longHandProps, 'font', 'font-size']

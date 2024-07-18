@@ -1,0 +1,56 @@
+@use 'styles/utils';
+
+.our-clients {
+    .title {
+        margin-bottom: 50px;
+    }
+
+    &__list-wrapper {
+        margin: 0 calc(var(--container-padding) * -1);
+        padding: 0 var(--container-padding);
+    }
+
+    &__item {
+        position: relative;
+        width: 290px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: var(--gray);
+        border-radius: 20px;
+
+        &::after {
+            inset: 0;
+            content: '';
+            position: absolute;
+            opacity: 0.3;
+            background: linear-gradient(315deg, rgba(183, 212, 75, 0.3) 0%, rgba(183, 212, 75, 0.3) 100%);
+        }
+
+        img {
+            filter: saturate(0);
+            object-fit: contain;
+            object-position: center;
+            position: relative;
+            z-index: 1;
+            width: auto;
+            height: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .our-clients {
+        .title {
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            padding: 35px 40px;
+            width: fit-content;
+            height: 200px;
+        }
+    }
+}

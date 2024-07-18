@@ -42,8 +42,9 @@ html {
 }
 
 .container {
+    --container-padding: 30px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 var(--container-padding);
 }
 
 .main-wrapper {
@@ -80,6 +81,11 @@ html.disable-scroll {
 .swiper-wrapper,
 .swiper-slide {
     box-sizing: border-box !important;
+}
+
+.section-border {
+    border: solid hsl(0, 0%, 7%, 0.15);
+    border-width: 1px 0;
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
