@@ -1,11 +1,16 @@
 @use 'styles/utils';
 
-.section {
-    &__title {
-        font-size: 5.2rem;
+.title,
+.section__title {
+    width: 100%;
+    max-width: 1271px;
+    font-size: 5.2rem;
 
-        @media only screen and (max-width: utils.$tablet1000) {
-            font-size: 3.2rem;
-        }
+    span {
+        color: var(--370C);
+    }
+
+    @media only screen and (max-width: utils.$tablet1000) {
+        font-size: 3.2rem;
     }
 }

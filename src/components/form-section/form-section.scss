@@ -1,0 +1,54 @@
+@use 'styles/utils';
+
+.form-section {
+    position: relative;
+    color: var(--white);
+    background-color: var(--black);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -29px;
+        right: 0;
+        filter: blur(1000px);
+        @include utils.square(718px);
+        opacity: 0.2;
+        background: var(--375C);
+        border-radius: 100%;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 770px;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        opacity: 0.5;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 920px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .form-section {
+        .container {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use 'styles/utils';
+
+.check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+
+        &::before {
+            content: '';
+            position: relative;
+            top: 2px;
+            background-image: url('assets/icons/check.svg');
+            @include utils.square(24px);
+        }
+    }
+}
