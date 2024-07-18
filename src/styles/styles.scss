@@ -16,6 +16,9 @@
 @use 'ui/buttons/close-btn';
 @use 'ui/title';
 
+// Components
+@use 'components/main-hero/main-hero';
+
 // Page
 @use 'layout/header/header';
 @use 'layout/footer/footer';
