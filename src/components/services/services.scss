@@ -60,6 +60,7 @@
             padding: 12px;
             background-color: hsla(73, 61%, 56%, 0.15);
             border-radius: 20px;
+            @include utils.square(72px);
         }
 
         &-footer {
@@ -108,9 +109,15 @@
 
         &__item {
             padding: 20px;
+            min-height: fit-content;
 
             &-header {
-                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            &-icon {
+                @include utils.square(42px);
+                padding: 9px;
             }
 
             &-arrow {
