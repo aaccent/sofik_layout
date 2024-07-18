@@ -1,0 +1,17 @@
+include layout/utils
+
+-
+    list = [
+        require("assets/content/clients/client-1.png"),
+        require("assets/content/clients/client-2.png"),
+        require("assets/content/clients/client-3.png"),
+        require("assets/content/clients/client-4.png"),
+        require("assets/content/clients/client-5.png"),
+        require("assets/content/clients/client-6.png"),
+    ]
+
++section.our-clients
+    h2.title Наши клиенты
+    .swiper.our-clients__list-wrapper: ul.swiper-wrapper.our-clients__list
+        each client in list
+            li.swiper-slide.our-clients__item: +img(client)

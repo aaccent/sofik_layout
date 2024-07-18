@@ -43,7 +43,8 @@ html {
 
 .container {
     margin: 0 auto;
-    padding: 0 30px;
+    --container-padding: 30px;
+    padding: 0 var(--container-padding);
 }
 
 .main-wrapper {
