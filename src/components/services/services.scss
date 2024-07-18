@@ -2,9 +2,9 @@
 
 .services {
     &-list {
-        gap: 30px;
         margin-top: 50px;
         display: flex;
+        gap: 30px;
         flex-wrap: wrap;
     }
 
@@ -64,13 +64,13 @@
         }
 
         &-footer {
-            gap: 20px;
             position: absolute;
             right: 50px;
             bottom: 50px;
             left: 50px;
             margin-top: 30px;
             display: flex;
+            gap: 20px;
             justify-content: space-between;
             opacity: 0;
             visibility: hidden;
