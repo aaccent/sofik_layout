@@ -22,22 +22,22 @@
         border-radius: 20px;
 
         &::after {
-            inset: 0;
             content: '';
             position: absolute;
+            inset: 0;
             opacity: 0.3;
             background: linear-gradient(315deg, rgba(183, 212, 75, 0.3) 0%, rgba(183, 212, 75, 0.3) 100%);
         }
 
         img {
-            filter: saturate(0);
-            object-fit: contain;
-            object-position: center;
             position: relative;
             z-index: 1;
             width: auto;
             max-width: 250px;
             height: auto;
+            filter: saturate(0);
+            object-position: center;
+            object-fit: contain;
         }
     }
 }

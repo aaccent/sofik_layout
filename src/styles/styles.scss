@@ -18,11 +18,16 @@
 @use 'components/our-clients/our-clients';
 @use 'components/our-projects/our-projects';
 @use 'components/calculator/calculator';
+@use 'components/form-section/form-section';
 
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/scrollbar';
 @use 'ui/title';
+@use 'ui/buttons/button';
+@use 'ui/check-list';
+@use 'ui/input/input';
+@use 'ui/form/form';
 
 // Page
 @use 'layout/header/header';

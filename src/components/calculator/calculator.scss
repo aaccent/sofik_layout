@@ -11,9 +11,9 @@
     }
 
     &__form {
-        gap: 20px;
         margin-top: 50px;
         display: flex;
+        gap: 20px;
         justify-content: center;
         align-items: center;
 
@@ -25,6 +25,8 @@
     }
 
     .field {
+        max-width: 450px;
+
         &._period {
             display: flex;
             justify-content: space-between;
@@ -50,9 +52,9 @@
         }
 
         &-info {
-            gap: 10px;
             margin-top: 10px;
             display: flex;
+            gap: 10px;
             align-items: center;
         }
 
@@ -109,17 +111,17 @@
     }
 
     &-options {
-        gap: 20px;
         margin-top: 60px;
         display: flex;
+        gap: 20px;
         align-items: center;
     }
 
     &__selector {
-        gap: 10px;
         position: relative;
         padding: 10px 20px;
         display: flex;
+        gap: 10px;
         align-items: center;
         color: var(--white);
         cursor: pointer;
@@ -145,7 +147,6 @@
         }
 
         &-options {
-            gap: 10px;
             position: absolute;
             top: 60px;
             left: 0;
@@ -153,6 +154,7 @@
             width: 345px;
             display: none;
             flex-direction: column;
+            gap: 10px;
             color: var(--black);
             background-color: var(--white);
             border-radius: 20px;

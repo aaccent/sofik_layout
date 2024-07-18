@@ -3,10 +3,10 @@ mixin field(props)
         props = Object.assign({
             placeholder: '',
             name: '',
-            type: '',
-            class: ''
+            type: 'text',
         }, props || {})
-    .field(class=props.class)
+
+    label.field&attributes(attributes)
         .field__title= props.placeholder
-        input.field__input(name=props.name, type=props.type)
+        input.field__input(name=props.name, type=props.type, placeholder=props.placeholder)
         block

@@ -21,8 +21,8 @@ include ui/input/input
     h2.section__title Калькулятор банковской гарантии
     .calculator-content
         form.calculator__form
-            +field({placeholder: 'Сумма гарантии', name: 'amount', class: '_amount'})
-            +field({placeholder: 'Срок гарантии', name: 'period', class: '_period'})
+            +field({placeholder: 'Сумма гарантии', name: 'amount'})._amount
+            +field({placeholder: 'Срок гарантии', name: 'period'})._period
                 input._hidden(type='date')
             .field.calculator__field._result
                 output.calculator__field-output 0 ₽
