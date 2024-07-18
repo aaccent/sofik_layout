@@ -4,26 +4,27 @@
 @use 'general/fonts';
 @use 'general/global';
 @use 'node_modules/swiper/swiper';
+@use 'node_modules/swiper/modules/navigation';
+@use 'node_modules/swiper/modules/pagination';
+@use 'node_modules/swiper/modules/scrollbar' as swiper-scrollbar;
+@use 'node_modules/swiper/modules/effect-fade';
 
 // Popup
 @use 'features/popup/popup';
 
 // Components
+@use 'components/main-hero/main-hero';
 @use 'components/stages/stages';
 @use 'components/our-clients/our-clients';
+@use 'components/our-projects/our-projects';
+@use 'components/calculator/calculator';
 
 // Ui
 @use 'ui/buttons/close-btn';
-@use 'ui/title';
-
-// Components
-@use 'components/main-hero/main-hero';
+@use 'ui/scrollbar';
 @use 'ui/title';
 
 // Page
 @use 'layout/header/header';
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
-
-//Components
-@use 'components/calculator/calculator';

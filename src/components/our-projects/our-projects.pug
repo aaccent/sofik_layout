@@ -1,0 +1,14 @@
+include layout/utils
+
++section.our-projects
+    h2.title Проекты, которыми мы гордимся
+    .our-projects__list-wrapper.swiper
+        ul.our-projects__list.swiper-wrapper
+            each _ in Array(12)
+                li.swiper-slide: a.our-projects__item
+                    +img(require('assets/content/project-img.jpg?as=webp')).our-projects__item-img
+                    .our-projects__item-title Название проекта
+                    p.our-projects__item-text
+                        | Описание проекта, которое умещается в 3 строки и
+                        | раскрывает всю основную суть кейса, мотивируя кликнуть на блок
+        .swiper-scrollbar.scrollbar
