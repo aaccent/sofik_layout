@@ -18,8 +18,12 @@
 
 // Components
 @use 'components/main-hero/main-hero';
+@use 'ui/title';
 
 // Page
 @use 'layout/header/header';
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
+
+//Components
+@use 'components/calculator/calculator';

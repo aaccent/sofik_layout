@@ -1,0 +1,12 @@
+mixin field(props)
+    -
+        props = Object.assign({
+            placeholder: '',
+            name: '',
+            type: '',
+            class: ''
+        }, props || {})
+    .field(class=props.class)
+        .field__title= props.placeholder
+        input.field__input(name=props.name, type=props.type)
+        block
