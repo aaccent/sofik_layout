@@ -1,0 +1,149 @@
+@use 'styles/utils';
+
+.services {
+    &-list {
+        gap: 30px;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        position: relative;
+        padding: 50px;
+        height: auto;
+        min-height: 381px;
+        flex-basis: 32.2%;
+        color: var(--white);
+        cursor: pointer;
+        background-color: var(--black);
+        border-radius: 20px;
+
+        @media only screen and (min-width: utils.$tablet1000) {
+            @include utils.only-hover {
+                .services__item-header {
+                    display: none;
+                }
+
+                .services__item-footer {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &._half {
+            flex-basis: 49%;
+        }
+
+        &._full {
+            flex-basis: 100%;
+        }
+
+        &-header {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            font-size: 3.2rem;
+        }
+
+        &-description {
+            opacity: 0.8;
+        }
+
+        &-icon {
+            padding: 12px;
+            background-color: hsla(73, 61%, 56%, 0.15);
+            border-radius: 20px;
+        }
+
+        &-footer {
+            gap: 20px;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            left: 50px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                visibility 0.3s ease-in-out,
+                opacity 0.3s ease-in-out;
+        }
+
+        &-popup-btn {
+            padding: 20px 0;
+            width: 70%;
+            color: var(--black);
+            font-size: 2.4rem;
+            text-align: center;
+            background-color: var(--382C);
+            border-radius: 20px;
+        }
+
+        &-link {
+            padding: 20px 10px;
+            width: 37%;
+            display: block;
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid var(--375C);
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .services {
+        &-list {
+            margin-top: 30px;
+            flex-direction: column;
+        }
+
+        &__item {
+            padding: 20px;
+
+            &-header {
+                margin-top: 20px;
+            }
+
+            &-arrow {
+                display: none;
+            }
+
+            &-title {
+                font-size: 2.4rem;
+            }
+
+            &-description {
+                font-size: 1.6rem;
+            }
+
+            &-footer {
+                position: static;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &-popup-btn,
+            &-link {
+                font-size: 1.6rem;
+            }
+
+            &-popup-btn {
+                width: 168px;
+            }
+
+            &-link {
+                width: 127px;
+            }
+        }
+    }
+}
