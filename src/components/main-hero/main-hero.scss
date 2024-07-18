@@ -63,9 +63,12 @@
         }
 
         &-image {
+            object-fit: cover;
+            object-position: center;
             position: absolute;
             z-index: 5;
             right: 0;
+            height: 972px;
         }
     }
 
@@ -139,15 +142,35 @@
 
             &::after {
                 @include utils.square(468px);
+                top: 50%;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
             &::before {
                 @include utils.square(504px);
-                top: 57%;
-                left: 60%;
-                transform: translateX(-47%);
+                top: 50%;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+
+            &-image {
+                bottom: -32%;
+                left: -68%;
+                transform: translateX(50%);
+                width: fit-content;
+                height: 620px;
+            }
+        }
+
+        &__controls {
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--black);
+
+            &-btn {
+                display: none;
             }
         }
     }
