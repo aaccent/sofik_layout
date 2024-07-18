@@ -17,11 +17,12 @@
 @use 'components/stages/stages';
 @use 'components/our-clients/our-clients';
 @use 'components/our-projects/our-projects';
+@use 'components/calculator/calculator';
 
 // Ui
 @use 'ui/buttons/close-btn';
-@use 'ui/title';
 @use 'ui/scrollbar';
+@use 'ui/title';
 
 // Page
 @use 'layout/header/header';

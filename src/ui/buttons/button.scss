@@ -1,0 +1,17 @@
+@use 'styles/utils';
+
+.button {
+    padding: 30px 0;
+    color: var(--black);
+    font-size: 2.4rem;
+    text-align: center;
+    background-color: var(--382C);
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .button {
+        padding: 20px 0;
+        font-size: 1.6rem;
+    }
+}
