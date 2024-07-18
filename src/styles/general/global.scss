@@ -67,6 +67,10 @@ body {
     overflow-x: clip;
     color: var(--black);
     font: 400 2rem var(--manrope);
+
+    @media only screen and (max-width: utils.$tablet1200) {
+        font-size: 1.6rem;
+    }
 }
 
 html.disable-scroll {
