@@ -1,0 +1,40 @@
+include layout/utils
+
+-
+    var reasons = [
+        {
+            title: 'Выпуск финансового продукта за 1 день',
+            description: 'Оперативное взаимодействие с кредитно-финансовыми учреждениями',
+            icon: require('assets/icons/reason.svg'),
+            class: ''
+        },{
+            title: 'Комиссия за услуги 0%',
+            description: 'Вы заключаете договор с банком напрямую и оплачиваете только комиссию банка',
+            icon: require('assets/icons/reason2.svg'),
+            class: ''
+        },{
+            title: 'Одобрение в 95% случаев',
+            description: 'У нас за плечами более 10 лет помощи бизнесу. Одобрение получают 9 из 10 заявок',
+            icon: require('assets/icons/reason3.svg'),
+            class: ''
+        },{
+            title: 'Без посещения офиса',
+            description: 'Работаем дистанционно во всех регионах РФ, полностью электронный документооборот',
+            icon: require('assets/icons/reason4.svg'),
+            class: '_half'
+        },{
+            title: 'Для большинства финансовых продуктов потребуется минимальный пакет документов',
+            description: '',
+            icon: require('assets/icons/reason5.svg'),
+            class: '_half'
+        },
+    ]
+
++section.reasons
+    h2.section__title Почему 95% клиентов выбирают СОФИК
+    .reasons-list
+        each item in reasons
+            .reasons__item(class=item.class)
+                +img(item.icon).reasons__item-icon
+                .reasons__item-title= item.title
+                .reasons__item-description= item.description
