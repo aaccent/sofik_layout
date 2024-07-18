@@ -31,11 +31,11 @@ mixin stages(props)
             list: list
         }, props)
 
-    +section.stages
+    +section.stages.section-border
         h2.title Схема получения банковской гарантии
         ul.stages__list
             each stage in props.list
-                li(class = stage.isActive ? 'stages__list-item stages__list-item--active': 'stages__list-item')
+                li(class=stage.isActive ? 'stages__list-item stages__list-item--active' : 'stages__list-item')
                     // Номер шага добавляется автоматически через CSS
                     +wrapBreak: span.stages__item-number Шаг
                     +wrapBreak: span.stages__item-text= stage.text

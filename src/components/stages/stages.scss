@@ -1,9 +1,6 @@
 @use 'styles/utils';
 
 .stages {
-    border: solid hsl(0, 0%, 7%, .15);
-    border-width: 1px 0;
-
     .title {
         margin-bottom: 50px;
     }
@@ -41,9 +38,9 @@
         color: hsla(0, 0%, 7%, 0.5);
 
         &::before {
-            content: "";
+            content: '';
             @include utils.square(24px);
-            background-image: url("assets/icons/check.svg");
+            background-image: url('assets/icons/check.svg');
             @include utils.bg-defaults;
             margin-right: 10px;
             display: block;
@@ -78,7 +75,7 @@
             border-radius: 100px;
 
             &::after {
-                content: "";
+                content: '';
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -102,7 +99,7 @@
         border-radius: 100%;
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -121,16 +118,16 @@
         span {
             position: relative;
             right: 35px;
-            opacity: 1;
             color: var(--370C);
+            opacity: 1;
         }
 
         &::before {
-            background-image: url("assets/static/active-arrow.svg");
-            width: 45px;
-            height: 114px;
             position: relative;
             right: 11px;
+            width: 45px;
+            height: 114px;
+            background-image: url('assets/static/active-arrow.svg');
         }
     }
 
@@ -157,10 +154,10 @@
         }
 
         &::before {
-            content: "";
+            content: '';
             width: 17px;
             height: 112px;
-            background-image: url("assets/static/rest-arrow.svg");
+            background-image: url('assets/static/rest-arrow.svg');
             @include utils.bg-defaults;
             @include utils.transition((right, width));
         }
@@ -170,14 +167,15 @@
 @media only screen and (max-width: utils.$tablet1000) {
     .stages {
         padding-bottom: 75px;
+
         .title {
             margin-bottom: 64px;
         }
 
         &__list {
-            flex-direction: column;
             gap: 20px;
             padding-bottom: 0;
+            flex-direction: column;
         }
 
         &__list-item:has(&__item-arrow) &__item-line span:last-child {
@@ -194,9 +192,9 @@
         }
 
         &__item-arrow {
-            margin-top: 20px;
             position: static;
             translate: 0;
+            margin-top: 20px;
 
             &::before {
                 display: none;
