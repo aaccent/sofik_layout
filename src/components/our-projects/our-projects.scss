@@ -1,0 +1,69 @@
+@use 'styles/utils';
+
+.our-projects {
+    .title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        margin-bottom: 50px;
+    }
+
+    .swiper-slide {
+        max-width: 600px;
+        height: auto;
+    }
+
+    &__item {
+        padding: 50px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        background-color: var(--gray);
+        border-radius: 20px;
+
+        &-img {
+            margin-bottom: 30px;
+            width: 100%;
+            height: 300px;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            font-size: 3.2rem;
+        }
+
+        &-text {
+            opacity: 0.8;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .our-projects {
+        .title {
+            margin-bottom: 30px;
+        }
+
+        .swiper-slide {
+            max-width: 300px;
+        }
+
+        &__item {
+            padding: 20px;
+
+            &-img {
+                height: 200px;
+            }
+
+            &-title {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}

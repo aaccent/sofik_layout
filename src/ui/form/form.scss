@@ -1,0 +1,29 @@
+@use 'styles/utils';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .button {
+        height: 130px;
+    }
+
+    &__privacy {
+        font-size: 1.6rem;
+        opacity: 0.5;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .form {
+        .button {
+            height: 62px;
+        }
+
+        &__privacy {
+            margin-top: 10px;
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+include layout/utils
+include ui/input/input
+
+form.form
+    +field({ placeholder: 'Ваше имя', name: 'name', type: 'text', })
+    +field({ placeholder: 'Ваш номер', name: 'tel', type: 'tel', })
+    +wrapBreak: button.button(type='submit') Получить консультацию
+    .form__privacy
+        | Нажимая на кнопку «получить консультацию» вы подтверждаете
+        | своё согласие с
+        a(href='#') политикой конфиденциальности
+        | сайта

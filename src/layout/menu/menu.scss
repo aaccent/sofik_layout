@@ -2,18 +2,18 @@
 
 .menu {
     &-list {
-        gap: 30px;
         row-gap: 10px;
         display: flex;
+        gap: 30px;
         flex-wrap: wrap;
         align-items: center;
     }
 
     &-item {
-        gap: 10px;
         position: relative;
         padding: 10px 14px;
         display: flex;
+        gap: 10px;
         align-items: center;
         cursor: pointer;
         background-color: hsla(0, 0%, 97%, 1);
@@ -54,9 +54,9 @@
     border: 1px solid hsla(0, 0%, 7%, 0.15);
 
     &-list {
-        gap: 10px;
         display: flex;
         flex-direction: column;
+        gap: 10px;
     }
 
     &-item {
@@ -95,8 +95,8 @@
         }
 
         &-item {
-            gap: 0;
             width: 100%;
+            gap: 0;
             justify-content: space-between;
             background-color: var(--white);
         }
