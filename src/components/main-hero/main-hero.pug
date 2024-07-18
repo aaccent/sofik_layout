@@ -6,13 +6,16 @@ include layout/utils
             each _, index in Array(6)
                 .main-hero__slide.swiper-slide
                     .main-hero__slide-content
-                        .main-hero__slide-title Заголовок слайда #{ index+1 } Банковские гарантии по низким ставкам из любой точки России
+                        if index = 0
+                            h1.main-hero__slide-title Заголовок слайда #{ index+1 } Банковские гарантии по низким ставкам из любой точки России
+                        else
+                            main-hero__slide-title Заголовок слайда #{ index+1 } Банковские гарантии по низким ставкам из любой точки России
                         if index===0
                             +popupBtn('call').main-hero__slide-button Открыть попап
                         else
                             +anchor.main-hero__slide-button Ссылка для слайдера #{ index+1 }
                     +img(require('assets/content/slide.png')).main-hero__slide-image
         .main-hero__controls
-            button.main-hero__controls-btn._prev
+            +wrapBreak: button.main-hero__controls-btn._prev
             .swiper-pagination.main-hero__controls-pagination
-            button.main-hero__controls-btn._next
+            +wrapBreak: button.main-hero__controls-btn._next
