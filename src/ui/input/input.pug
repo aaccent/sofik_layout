@@ -6,7 +6,7 @@ mixin field(props)
             type: 'text',
         }, props || {})
 
-    .field&attributes(attributes)
+    label.field&attributes(attributes)
         .field__title= props.placeholder
-        input.field__input(name=props.name, type=props.type)
+        input.field__input(name=props.name, type=props.type, placeholder=props.placeholder)
         block

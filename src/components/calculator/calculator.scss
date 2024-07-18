@@ -25,6 +25,8 @@
     }
 
     .field {
+        max-width: 450px;
+
         &._period {
             display: flex;
             justify-content: space-between;
