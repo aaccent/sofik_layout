@@ -83,6 +83,11 @@ html.disable-scroll {
     box-sizing: border-box !important;
 }
 
+.section-border {
+    border: solid hsl(0, 0%, 7%, .15);
+    border-width: 1px 0;
+}
+
 @media only screen and (max-width: utils.$tablet1000) {
     .container {
         padding: 0 10px;
