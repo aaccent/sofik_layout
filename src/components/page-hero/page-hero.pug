@@ -1,0 +1,26 @@
+include layout/utils
+include ui/breadcrumbs/breadcrumbs
+
+mixin page-hero(props)
+    -
+        props = Object.assign({
+            image: '',
+            mobileImage: '',
+            title: '',
+            isAboutPage: false,
+            isServicePage: false,
+        }, props || {})
+    +section.page-hero
+        +breadcrumbs(['Главная', 'Услуга'])
+        if props.isServicePage
+            .page-hero__banner._dark
+                +img(props.image).page-hero__image
+        else if props.isAboutPage
+            .page-hero__banner._about
+                +img(require('assets/content/about-logo.png')).page-hero__logo
+        else
+            .page-hero__banner
+                picture
+                    source(srcset=props.mobileImage, media='(max-width:1000px)')
+                    +img(props.image).page-hero__image
+        h1.page-hero__title Название подуслуги

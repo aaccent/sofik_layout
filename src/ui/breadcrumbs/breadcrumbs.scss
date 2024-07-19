@@ -1,0 +1,27 @@
+@use 'styles/utils';
+
+.breadcrumbs {
+    position: absolute;
+    z-index: 3;
+    top: 63px;
+    left: 130px;
+    display: flex;
+    gap: 10px;
+    color: var(--white);
+
+    &__item {
+        opacity: 0.5;
+
+        &::after {
+            content: '/';
+            margin-left: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .breadcrumbs {
+        top: 50px;
+        left: 10px;
+    }
+}
