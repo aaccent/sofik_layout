@@ -17,7 +17,7 @@ mixin page-hero(props)
                 +img(props.image).page-hero__image
         else if props.isAboutPage
             .page-hero__banner._about
-                +img(require('assets/content/about-logo.png')).page-hero__logo
+                +img(require('assets/content/about-logo.png?as=webp')).page-hero__logo
         else
             .page-hero__banner
                 picture

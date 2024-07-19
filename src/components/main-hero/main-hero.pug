@@ -15,8 +15,11 @@ include layout/utils
                         else
                             +anchor.main-hero__slide-button Ссылка для слайдера #{ index + 1 }
                     picture
-                        source(srcset=require('assets/static/main-hero-img-mobile.jpg'), media='(max-width:1000px)')
-                        +img(require('assets/static/main-hero-img.jpg')).main-hero__slide-image
+                        source(
+                            srcset=require('assets/static/main-hero-img-mobile.jpg?as=webp'),
+                            media='(max-width:1000px)'
+                        )
+                        +img(require('assets/static/main-hero-img.jpg?as=webp')).main-hero__slide-image
         .main-hero__controls
             +wrapBreak: button.main-hero__controls-btn._prev
             .swiper-pagination.main-hero__controls-pagination
