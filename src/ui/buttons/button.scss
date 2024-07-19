@@ -7,6 +7,11 @@
     text-align: center;
     background-color: var(--382C);
     border-radius: 20px;
+
+    &--transparent {
+        color: var(--white);
+        background-color: transparent;
+    }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {

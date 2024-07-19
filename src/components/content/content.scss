@@ -1,0 +1,142 @@
+@use 'styles/utils';
+
+.content {
+    .container *:not(:is(img)) {
+        width: 100%;
+        max-width: 1053px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font: 500 5.2rem var(--manrope);
+
+        &:not(:first-child) {
+            margin-top: 50px;
+        }
+    }
+
+    p {
+        font: 300 2.4rem var(--manrope);
+        line-height: 148%;
+        opacity: 0.8;
+    }
+
+    p + p {
+        margin-top: 15px;
+    }
+
+    h3 {
+        margin-top: 50px;
+        margin-bottom: 16px;
+        font: 500 3.6rem var(--manrope);
+    }
+
+    blockquote {
+        position: relative;
+        margin-bottom: 10px;
+        padding: 12px 24px;
+        display: block;
+        overflow: hidden;
+        background-color: var(--382C);
+        border-radius: 6px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            display: block;
+            background-color: var(--375C);
+        }
+
+        & + p {
+            font-size: 1.6rem;
+            opacity: 0.5;
+        }
+    }
+
+    img {
+        margin: 40px 0 50px;
+        width: 100%;
+        max-width: 1390px;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    h4 {
+        margin: 50px 0 17px;
+        font: 400 2.4rem var(--manrope);
+    }
+
+    ol,
+    ul {
+        margin: 20px 0;
+        padding-left: 25px;
+        font: 300 2.4rem var(--manrope);
+        line-height: 148%;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul {
+        list-style-type: initial;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .content {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 2.4rem;
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            margin: 20px 0 10px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        blockquote {
+            padding: 10px;
+            font: 400 1.4rem var(--nunito);
+
+            & + p {
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+        }
+
+        img {
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        h4 {
+            margin: 30px 0 10px;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        ol,
+        ul {
+            padding-left: 20px;
+            max-width: fit-content;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
+}

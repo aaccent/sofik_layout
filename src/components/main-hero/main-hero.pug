@@ -9,12 +9,17 @@ include layout/utils
                         if index === 0
                             h1.main-hero__slide-title Заголовок слайда #{ index + 1 } Банковские гарантии по низким ставкам из любой точки России
                         else
-                            main-hero__slide-title Заголовок слайда #{ index + 1 } Банковские гарантии по низким ставкам из любой точки России
+                            .main-hero__slide-title Заголовок слайда #{ index + 1 } Банковские гарантии по низким ставкам из любой точки России
                         if index === 0
                             +popupBtn('call').main-hero__slide-button Открыть попап
                         else
                             +anchor.main-hero__slide-button Ссылка для слайдера #{ index + 1 }
-                    +img(require('assets/content/slide.png')).main-hero__slide-image
+                    picture
+                        source(
+                            srcset=require('assets/static/main-hero-img-mobile.jpg?as=webp'),
+                            media='(max-width:1000px)'
+                        )
+                        +img(require('assets/static/main-hero-img.jpg?as=webp')).main-hero__slide-image
         .main-hero__controls
             +wrapBreak: button.main-hero__controls-btn._prev
             .swiper-pagination.main-hero__controls-pagination
