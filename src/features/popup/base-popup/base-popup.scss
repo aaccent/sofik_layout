@@ -49,12 +49,15 @@
 @media only screen and (max-width: utils.$tablet1200) {
     .base-popup {
         padding: 0;
+        flex-direction: column;
         overflow: auto;
 
         &__inner {
             margin-top: 63px;
             padding: 50px 10px 15px;
             max-width: initial;
+            height: 1px;
+            flex-grow: 1;
             border-radius: 0;
         }
 

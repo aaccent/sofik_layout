@@ -1,0 +1,22 @@
+@use 'styles/utils';
+
+.thx-popup {
+    &__inner {
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__icon {
+        margin: 10% auto 0;
+        @include utils.square(104px);
+        object-position: center;
+        object-fit: contain;
+    }
+
+    .title {
+        margin: 50px auto auto;
+        max-width: 535px;
+        text-align: center;
+    }
+}
