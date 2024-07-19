@@ -15,7 +15,7 @@ include layout/utils
         p Жирмунский, однако, настаивал, что синхрония доступна. Анжамбеман семантически отражает хорей. Представленный лексико-семантический анализ является психолингвистическим в своей основе, но графомания
         p Подтекст, если уловить хореический ритм или аллитерацию на "р", иллюстрирует культурный размер. Голос персонажа интуитивно понятен.
         p Субъективное восприятие вразнобой нивелирует дольник. Ритмический рисунок, чтобы уловить хореический ритм или аллитерацию на "л", неумеренно начинает ритм.
-    button.seo__button Читать полностью
-    picture
-        source(srcset=require('assets/content/seo-image-max-width-1000.png'), media='(max-width: 1000px)')
-        +img(require('assets/content/seo-image.png')).seo-image
+    +wrapBreak: button.seo__button Читать полностью
+    +wrapBreak: picture
+        source(srcset=require('assets/content/seo-image-max-width-1000.png?as=webp'), media='(max-width: 1000px)')
+        +img(require('assets/content/seo-image.png?as=webp')).seo-image
