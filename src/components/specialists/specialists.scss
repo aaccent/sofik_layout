@@ -1,0 +1,70 @@
+@use 'styles/utils';
+
+.specialists {
+    padding-bottom: 214px;
+
+    &__list {
+        position: static;
+        margin-top: 50px;
+
+        &-scroll {
+            bottom: 150px !important;
+            height: 14px !important;
+            background-color: var(--gray);
+            border-radius: 100px;
+
+            .swiper-scrollbar-drag {
+                background-color: var(--black);
+            }
+        }
+    }
+
+    &__item {
+        &-image {
+            margin-bottom: 30px;
+            height: 500px;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        &-name {
+            font-size: 28px;
+        }
+
+        &-position {
+            opacity: 0.5;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .specialists {
+        padding-bottom: 94px;
+
+        &__list {
+            margin-top: 30px;
+
+            &-scroll {
+                bottom: 50px !important;
+            }
+        }
+
+        &__item {
+            width: fit-content;
+
+            &-name {
+                font-size: 1.6rem;
+            }
+
+            &-position {
+                font-size: 1.4rem;
+            }
+
+            &-image {
+                width: 255px;
+                height: 320px;
+            }
+        }
+    }
+}

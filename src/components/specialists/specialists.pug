@@ -1,0 +1,52 @@
+include layout/utils
+
+-
+    var specialists = [
+        {
+            image: require('assets/content/specialists/specialist.jpg?as=webp'),
+            name: 'Евгений Беляев',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist2.jpg?as=webp'),
+            name: 'Константин Тюрнин',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist3.jpg?as=webp'),
+            name: 'Иван Косарев',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist4.jpg?as=webp'),
+            name: 'Таисия Булышева',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist2.jpg?as=webp'),
+            name: 'Иван Косарев',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist4.jpg?as=webp'),
+            name: 'Таисия Булышева',
+            position: 'Менеджер'
+        },
+        {
+            image: require('assets/content/specialists/specialist3.jpg?as=webp'),
+            name: 'Евгений Беляев',
+            position: 'Менеджер'
+        },
+    ]
+
+
++section.specialists
+    h2.section__title Специалисты
+    .specialists__list.swiper
+        .swiper-wrapper
+            each item in specialists
+                .specialists__item.swiper-slide
+                    +img(item.image).specialists__item-image
+                    .specialists__item-name= item.name
+                    .specialists__item-position= item.position
+        .specialists__list-scroll.swiper-scrollbar
