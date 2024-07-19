@@ -2,8 +2,6 @@ extends layout/page
 include layout/utils
 
 block append main
-    include components/page-hero/page-hero
-    +page-hero({ image: require('assets/static/main-hero-img.jpg?as=webp'), mobileImage: require('assets/static/main-hero-img-mobile.jpg?as=webp'), title: 'Внутренняя страница', isAboutPage: true })
     include components/main-hero/main-hero
     include components/services/services
     include components/calculator/calculator
