@@ -1,6 +1,8 @@
 @use 'styles/utils';
 
 .page-hero {
+    padding: 0;
+
     &__banner {
         position: relative;
         height: 960px;
@@ -52,6 +54,12 @@
             margin: 0 -10px;
             height: 678px;
             border-radius: 0;
+        }
+
+        &__logo {
+            bottom: 200px;
+            left: -133px;
+            transform: rotate(90deg);
         }
 
         &__title {
