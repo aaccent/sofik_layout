@@ -1,4 +1,13 @@
-const forms = document.querySelectorAll<HTMLFormElement>('form-section[data-handler]')
+import { openPopup } from 'features/popup/popup'
+
+function clearRequiredInputs(form: HTMLFormElement) {
+    const requiredInputs = form.querySelectorAll<HTMLInputElement>('input[required]')
+    requiredInputs.forEach((input) => {
+        input.value = ''
+    })
+}
+
+const forms = document.querySelectorAll<HTMLFormElement>('form[data-handler]')
 forms.forEach((form) => {
     form.addEventListener('submit', submitHandler)
 })
@@ -31,21 +40,62 @@ function submitHandler(e: SubmitEvent) {
             )
         }
 
+        openPopup('thx')
+        clearRequiredInputs(form)
         form.dispatchEvent(formSent)
     })
+}
+
+function createInvalidInput(input: HTMLInputElement) {
+    const field = input.parentElement
+    if (!field?.classList.contains('field')) return null
+
+    const fieldWrapper = field.parentElement
+    if (!fieldWrapper) return null
+    if (fieldWrapper.classList.contains('field__wrapper')) return fieldWrapper
+
+    const inputWrapper = document.createElement('div')
+    inputWrapper.className = 'field__wrapper'
+    inputWrapper.innerHTML = `<div class="field__error"></div>`
+
+    field.parentElement.insertBefore(inputWrapper, field)
+    inputWrapper.prepend(field)
+
+    return inputWrapper
+}
+
+function setError(input: HTMLInputElement, error: string) {
+    const inputWrapper = createInvalidInput(input)
+    if (!inputWrapper) return
+
+    const textContainer = inputWrapper.querySelector<HTMLDivElement>('.field__error')
+    if (!textContainer) return
+
+    textContainer.innerText = error
 }
 
 function validateForm(form: HTMLFormElement): Boolean {
     let valid = true
 
-    const requiredInputs = form.querySelectorAll<HTMLInputElement>('input[required]')
-
-    requiredInputs.forEach((i) => {
-        if (i.value !== '') return
+    const telInputs = form.querySelectorAll<HTMLInputElement>('input[type="tel"]')
+    telInputs.forEach((input) => {
+        const tel = input.value.replaceAll(/\D/g, '')
+        if (/7\d{10}/.test(tel)) return
 
         valid = false
-        i.classList.add('invalid')
-        i.addEventListener('input', () => i.classList.remove('invalid'), { once: true })
+        input.classList.add('invalid')
+        setError(input, 'Проверьте правильно ли указан номер')
+        input.addEventListener('input', () => input.classList.remove('invalid'), { once: true })
+    })
+
+    const requiredInputs = form.querySelectorAll<HTMLInputElement>('input[required]')
+    requiredInputs.forEach((input) => {
+        if (input.value !== '') return
+
+        valid = false
+        input.classList.add('invalid')
+        setError(input, 'Необходимо ввести данные')
+        input.addEventListener('input', () => input.classList.remove('invalid'), { once: true })
     })
 
     return valid

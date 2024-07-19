@@ -4,9 +4,10 @@ mixin field(props)
             placeholder: '',
             name: '',
             type: 'text',
+            required: false
         }, props || {})
 
     label.field&attributes(attributes)
         .field__title= props.placeholder
-        input.field__input(name=props.name, type=props.type, placeholder=props.placeholder)
+        input.field__input(name=props.name, type=props.type, placeholder=props.placeholder, required=props.required)
         block
