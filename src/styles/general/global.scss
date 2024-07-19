@@ -20,7 +20,7 @@ html {
         border-top: 1px solid hsla(0, 0%, 7%, 0.15);
     }
 
-    &:first-child {
+    &:is(.page-hero, .main-hero) {
         padding-top: 0;
     }
 
