@@ -1,0 +1,90 @@
+@use 'styles/utils';
+
+.franchise-benefits {
+    .title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        gap: 30px;
+    }
+
+    &__item {
+        padding: 50px;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        border: 1px solid hsl(0, 0%, 97%, 0.15);
+
+        &-icon {
+            margin-bottom: 30px;
+            @include utils.square(72px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(73, 61%, 56%, 0.15);
+            border-radius: 20px;
+
+            img {
+                @include utils.square(44px);
+                object-position: center;
+                object-fit: contain;
+            }
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            font-size: 3.2rem;
+        }
+
+        &-text {
+            font-size: 2.4rem;
+            opacity: 0.5;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .franchise-benefits {
+        .title {
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__item {
+            padding: 20px;
+            min-height: initial;
+
+            &-icon {
+                --size: 42px;
+                border-radius: 100%;
+
+                img {
+                    --size: 24px;
+                }
+            }
+
+            &-title {
+                font-size: 2.4rem;
+            }
+
+            &-text {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet800) {
+    .franchise-benefits {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

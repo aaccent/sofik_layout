@@ -1,0 +1,59 @@
+include layout/utils
+
+-
+    var list = [
+        {
+            icon: require('assets/icons/franchise-benefits/status-up.svg'),
+            title: 'Полноценное руководство по запуску и ведению бизнеса',
+            text: 'Подписываем договор, и вы становитесь официальным агентом по выдаче банковских гарантий',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/brush.svg'),
+            title: 'Брендбук, фирменный стиль, шаблоны рекламных макетов',
+            text: 'Подписываем договор, и вы становитесь официальным агентом ',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/setting-3.svg'),
+            title: 'Доступ к электронной финансовой платформе',
+            text: 'Подписываем договор, и вы становитесь официальным агентом по выдаче банковских гарантий',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/chart.svg'),
+            title: 'Финансовая модель с рекомендациями',
+            text: 'Подписываем договор, и вы становитесь официальным агентом по выдаче банковских гарантий',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/global-edit.svg'),
+            title: 'Размещение контактов на сайте компании',
+            text: 'Подписываем договор',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/archive.svg'),
+            title: 'Рекомендации по ведению управленческого учета',
+            text: '',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/messages-2.svg'),
+            title: 'Консультации по всем операционным вопросам',
+            text: '',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/video-play.svg'),
+            title: 'Обучающие и методические материалы, скрипты продаж',
+            text: '',
+        },
+        {
+            icon: require('assets/icons/franchise-benefits/like-tag.svg'),
+            title: 'Услуги менеджера по сопровождению',
+            text: 'Подписываем договор, и вы становитесь официальным агентом по выдаче банковских гарантий',
+        },
+    ]
+
++section.franchise-benefits
+    .title Вместе с франшизой вы получите
+    ul.franchise-benefits__list
+        each item in list
+            li.franchise-benefits__item
+                .franchise-benefits__item-icon: +img(item.icon)
+                .franchise-benefits__item-title= item.title
+                p.franchise-benefits__item-text= item.text
