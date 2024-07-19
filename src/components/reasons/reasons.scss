@@ -2,9 +2,9 @@
 
 .reasons {
     &-list {
-        gap: 30px;
         margin-top: 50px;
         display: flex;
+        gap: 30px;
         flex-wrap: wrap;
     }
 
@@ -51,8 +51,8 @@
 @media only screen and (max-width: utils.$tablet1000) {
     .reasons {
         &-list {
-            gap: 20px;
             flex-direction: column;
+            gap: 20px;
         }
 
         &__item {
