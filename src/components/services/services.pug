@@ -47,7 +47,7 @@ include layout/utils
             description: '44-ФЗ, 223-ФЗ, 185-ФЗ/615-П., Коммерческие закупки. Сумма до 1200 млн. рублей Ставка от 1,85% годовых Срок до 36 мес.',
             icon: require('assets/icons/service5.svg'),
             class: '_full'
-        },
+        }
 
     ]
 
@@ -64,4 +64,4 @@ include layout/utils
                 .services__item-description= item.description
                 .services__item-footer
                     +popupBtn('call').button.services__item-popup-btn Оставить заявку
-                    +anchor.button.services__item-link Подробнее
+                    +anchor.button.button--transparent.services__item-link Подробнее

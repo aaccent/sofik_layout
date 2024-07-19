@@ -63,6 +63,10 @@ html {
     display: none;
 }
 
+p + p {
+    margin-top: 30px;
+}
+
 body {
     overflow-x: clip;
     color: var(--black);

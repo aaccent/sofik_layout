@@ -9,9 +9,21 @@
 @use 'node_modules/swiper/modules/scrollbar' as swiper-scrollbar;
 @use 'node_modules/swiper/modules/effect-fade';
 
+// Ui
+@use 'ui/buttons/close-btn';
+@use 'ui/scrollbar';
+@use 'ui/title';
+@use 'ui/buttons/button';
+@use 'ui/check-list';
+@use 'ui/input/input';
+@use 'ui/form/form';
+@use 'ui/breadcrumbs/breadcrumbs';
+
 // Popup
 @use 'features/popup/popup';
+@use 'features/popup/base-popup/base-popup';
 @use 'ui/popups/call-popup/call-popup';
+@use 'ui/popups/thx-popup/thx-popup';
 
 // Components
 @use 'components/main-hero/main-hero';
@@ -26,16 +38,8 @@
 @use 'components/page-hero/page-hero';
 @use 'components/seo/seo';
 @use 'components/specialists/specialists';
-
-// Ui
-@use 'ui/buttons/close-btn';
-@use 'ui/scrollbar';
-@use 'ui/title';
-@use 'ui/buttons/button';
-@use 'ui/check-list';
-@use 'ui/input/input';
-@use 'ui/form/form';
-@use 'ui/breadcrumbs/breadcrumbs';
+@use 'components/director/director';
+@use 'components/FAQ/FAQ';
 
 // Page
 @use 'layout/cookie-notification/cookie-notification';

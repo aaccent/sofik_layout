@@ -1,0 +1,33 @@
+@use 'styles/utils';
+
+.director {
+    &__content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+
+        &-image {
+            width: 100%;
+            max-width: 909px;
+            height: 660px;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        &-position {
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+
+        &-name {
+            margin-bottom: 50px;
+            font: 400 5.2rem var(--manrope);
+        }
+
+        &-phrase {
+            line-height: 150%;
+            opacity: 0.8;
+        }
+    }
+}
