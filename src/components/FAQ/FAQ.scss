@@ -1,0 +1,124 @@
+@use 'styles/utils';
+
+.faq {
+    &-content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__image {
+        position: relative;
+        min-width: 576px;
+        max-width: 576px;
+        height: 820px;
+        border-radius: 30px;
+
+        img {
+            position: absolute;
+            inset: 0;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        z-index: 2;
+        top: 30px;
+        right: 30px;
+        left: 30px;
+        color: var(--white);
+        font: 400 5.2rem var(--manrope);
+    }
+
+    &__list {
+        margin-right: 50px;
+        width: 100%;
+        max-width: 1234px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item {
+        position: relative;
+        padding: 30px;
+        background-color: var(--gray);
+        border-radius: 20px;
+
+        &._opened {
+            .faq__item-answer {
+                &-wrapper {
+                    height: fit-content;
+                }
+            }
+
+            & .faq__item-btn {
+                transform: rotate(0);
+                background-color: var(--375C);
+                transition: transform 0.3s ease-in-out;
+
+                &::after {
+                    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(1725%) hue-rotate(339deg)
+                        brightness(114%) contrast(101%);
+                }
+            }
+        }
+
+        &-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+            font: 400 2.4rem var(--manrope);
+        }
+
+        &-btn {
+            @include utils.circle(36px);
+            transform: rotate(45deg);
+            background-color: var(--white);
+            transition: transform 0.3s ease-in-out;
+
+            &::after {
+                @include utils.bg-defaults(auto);
+                content: '';
+                display: block;
+                @include utils.square(36px);
+                background-image: url('assets/icons/close.svg');
+            }
+        }
+
+        &-answer {
+            opacity: 0.6;
+
+            p + p {
+                margin-top: 30px;
+            }
+
+            &-wrapper {
+                position: relative;
+                margin-top: 10px;
+                width: 100%;
+                max-width: 1003px;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .faq {
+        &__image {
+            display: none;
+        }
+
+        &__list {
+            margin: 0;
+        }
+
+        &__item-answer {
+            font-size: 2rem;
+        }
+    }
+}
