@@ -1,0 +1,11 @@
+include layout/utils
+
++section.licenses
+    h2.section__title Лицензии
+    .licenses__list.swiper
+        .swiper-wrapper
+            each _ in Array(8)
+                .licenses__item.swiper-slide
+                    +img(require('assets/content/licenses.jpg')).licenses__item-image
+                    .licenses__item-title Базовая лицензия на осуществление банковской деятельности
+        .scrollbar.swiper-scrollbar
