@@ -23,6 +23,7 @@
 @use 'components/services/services';
 @use 'components/reasons/reasons';
 @use 'components/content/content';
+@use 'components/page-hero/page-hero';
 
 // Ui
 @use 'ui/buttons/close-btn';
@@ -32,6 +33,7 @@
 @use 'ui/check-list';
 @use 'ui/input/input';
 @use 'ui/form/form';
+@use 'ui/breadcrumbs/breadcrumbs';
 
 // Page
 @use 'layout/header/header';
