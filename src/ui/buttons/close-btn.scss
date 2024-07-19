@@ -4,19 +4,19 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 40px;
-    height: 40px;
+    @include utils.circle(54px);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: hsl(0, 0%, 100%, 0.15);
 
     &::before,
     &::after {
         content: '';
         position: absolute;
-        width: 2.6px;
-        height: 26px;
-        background-color: #909090;
+        width: 2px;
+        height: 22px;
+        background-color: #ffffff;
         border-radius: 4px;
         @include utils.transition(background-color);
     }
@@ -54,8 +54,7 @@
 
 @media only screen and (max-width: 450px) {
     .close-btn {
-        width: 35px;
-        height: 35px;
+        --diameter: 44px;
 
         &::after,
         &::before {

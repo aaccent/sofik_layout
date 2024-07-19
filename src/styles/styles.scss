@@ -11,6 +11,7 @@
 
 // Popup
 @use 'features/popup/popup';
+@use 'ui/popups/call-popup/call-popup';
 
 // Components
 @use 'components/main-hero/main-hero';
@@ -21,6 +22,8 @@
 @use 'components/form-section/form-section';
 @use 'components/services/services';
 @use 'components/reasons/reasons';
+@use 'components/content/content';
+@use 'components/page-hero/page-hero';
 @use 'components/seo/seo';
 
 // Ui
@@ -31,6 +34,7 @@
 @use 'ui/check-list';
 @use 'ui/input/input';
 @use 'ui/form/form';
+@use 'ui/breadcrumbs/breadcrumbs';
 
 // Page
 @use 'layout/header/header';

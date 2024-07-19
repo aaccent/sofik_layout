@@ -2,3 +2,7 @@ include layout/utils
 include features/popup/popup
 
 +popup("call", "call-popup")
+    .call-popup__bg
+    .title Оставьте заявку на#[br]бесплатную консультацию
+    include ui/form/form
+    +img(require('assets/static/popup-logo.png?as=webp')).call-popup__logo
