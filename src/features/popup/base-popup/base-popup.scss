@@ -1,0 +1,74 @@
+@use 'styles/utils';
+
+.base-popup {
+    overflow: hidden;
+
+    &__inner {
+        position: relative;
+        padding: 70px 50px;
+        width: 100%;
+        max-width: 920px;
+        color: var(--white);
+        background-color: var(--black);
+        border-radius: 20px;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        border-radius: 20px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -520px;
+            left: 50%;
+            translate: -50%;
+            @include utils.square(718px);
+            display: block;
+            opacity: 0.2;
+            filter: blur(320px);
+            background: var(--375C);
+            border-radius: 100%;
+        }
+    }
+
+    &__logo {
+        margin: 50px auto 0;
+        width: 215px;
+        height: 90px;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .base-popup {
+        padding: 0;
+        flex-direction: column;
+        overflow: auto;
+
+        &__inner {
+            margin-top: 63px;
+            padding: 50px 10px 15px;
+            max-width: initial;
+            height: 1px;
+            flex-grow: 1;
+            border-radius: 0;
+        }
+
+        &__bg {
+            border-radius: 0;
+        }
+
+        &__logo {
+            margin-top: 30px;
+            width: 115px;
+            height: 50px;
+        }
+    }
+}

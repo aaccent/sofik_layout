@@ -1,0 +1,8 @@
+include layout/utils
+include features/popup/popup
+
+mixin base-popup(name, className)
+    +popup(name, className, 'base-popup__inner').base-popup&attributes(attributes)
+        .base-popup__bg
+        block
+        +img(require('assets/static/popup-logo.png?as=webp')).base-popup__logo

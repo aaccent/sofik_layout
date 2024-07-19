@@ -1,4 +1,7 @@
 import '@/features/popup/popup'
+import '@/features/forms'
+import '@/features/inputMask'
+
 import '@/layout/header/header.js'
 import '@/layout/menu/menu.js'
 import '@/layout/cookie-notification/cookie-notification.js'

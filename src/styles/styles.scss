@@ -21,7 +21,9 @@
 
 // Popup
 @use 'features/popup/popup';
+@use 'features/popup/base-popup/base-popup';
 @use 'ui/popups/call-popup/call-popup';
+@use 'ui/popups/thx-popup/thx-popup';
 
 // Components
 @use 'components/main-hero/main-hero';
