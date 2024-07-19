@@ -1,0 +1,108 @@
+@use 'styles/utils';
+
+.book-page-hero {
+    &__banner {
+        position: relative;
+        height: 960px;
+        overflow: hidden;
+        color: var(--white);
+        border-radius: 30px;
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    &__title {
+        position: absolute;
+        z-index: 2;
+        top: 100px;
+        left: 100px;
+        width: 100%;
+        max-width: 1105px;
+        font: 400 7.2rem var(--manrope);
+
+        span {
+            color: var(--375C);
+        }
+    }
+
+    &__info {
+        position: absolute;
+        z-index: 2;
+        bottom: 100px;
+        left: 100px;
+    }
+
+    &__subtitle {
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 669px;
+        font-size: 2.4rem;
+    }
+
+    &__partners-list {
+        padding: 29px 51px;
+        display: flex;
+        gap: 85px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--white);
+        border-radius: 90px;
+    }
+
+    &__partner {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .book-page-hero {
+        &__banner {
+            margin-right: -10px;
+            margin-left: -10px;
+            height: 678px;
+            border-radius: 0;
+        }
+
+        &__title {
+            top: 72px;
+            left: 10px;
+            max-width: 355px;
+            font-size: 3.2rem;
+        }
+
+        &__subtitle {
+            display: none;
+        }
+
+        &__info {
+            right: 10px;
+            bottom: 44px;
+            left: 10px;
+            padding: 20px 10px;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        &__partners-list {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 28px;
+            display: grid;
+            gap: 45px;
+            //            width: 355px;
+            //            flex-wrap: wrap;
+            //
+            //
+            //            gap: 45px;
+        }
+
+        &__partner {
+        }
+    }
+}
