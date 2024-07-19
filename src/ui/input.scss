@@ -1,9 +1,0 @@
-.input {
-    padding: 48.5px 40px;
-    background-color: hsl(0, 0%, 100%, 0.05);
-    border-radius: 20px;
-
-    &::before {
-        content: attr(placeholder);
-    }
-}

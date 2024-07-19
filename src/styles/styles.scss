@@ -11,6 +11,7 @@
 
 // Popup
 @use 'features/popup/popup';
+@use 'ui/popups/call-popup/call-popup';
 
 // Components
 @use 'components/main-hero/main-hero';
@@ -19,6 +20,8 @@
 @use 'components/our-projects/our-projects';
 @use 'components/calculator/calculator';
 @use 'components/form-section/form-section';
+@use 'components/services/services';
+@use 'components/reasons/reasons';
 
 // Ui
 @use 'ui/buttons/close-btn';

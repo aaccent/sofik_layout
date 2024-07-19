@@ -1,0 +1,75 @@
+@use 'styles/utils';
+
+.reasons {
+    &-list {
+        margin-top: 50px;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 50px;
+        display: flex;
+        flex-basis: 32.2%;
+        flex-direction: column;
+        background-color: var(--gray);
+        background-image: linear-gradient(315deg, rgba(183, 212, 75, 0.09) 0%, rgba(183, 212, 75, 0) 100%);
+        border-radius: 20px;
+
+        &-icon {
+            margin-bottom: 30px;
+            padding: 14px;
+            background-color: rgba(183, 212, 75, 0.15);
+            border-radius: 20px;
+            @include utils.square(72px);
+        }
+
+        &-title {
+            font-size: 3.2rem;
+
+            span {
+                color: var(--370C);
+            }
+        }
+
+        &-description {
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        &._half {
+            flex-basis: 49%;
+        }
+
+        &._full {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .reasons {
+        &-list {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__item {
+            padding: 20px;
+
+            &-icon {
+                @include utils.square(42px);
+                padding: 9px;
+            }
+
+            &-title {
+                font-size: 2.4rem;
+            }
+
+            &-description {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

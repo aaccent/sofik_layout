@@ -14,7 +14,7 @@
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
-    background-color: hsla(140, 100%, 2%, 0.8);
+    background-color: hsla(0, 0%, 7%, 0.8);
     transition: opacity, visibility;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;
@@ -31,8 +31,8 @@
 
     .close-btn {
         z-index: 30;
-        top: 20px;
-        right: 20px;
+        top: 0;
+        left: calc(100% + 50px);
     }
 }
 
@@ -45,8 +45,10 @@
 @media only screen and (max-width: 450px) {
     .popup {
         .close-btn {
-            top: 5px;
-            right: 5px;
+            top: initial;
+            right: 20px;
+            bottom: calc(100% + 10px);
+            left: initial;
         }
     }
 }
