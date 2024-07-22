@@ -1,5 +1,8 @@
 extends layout/page
 
+block prepend head
+    - var title = 'Калькулятор'
+
 block append main
     include ui/page-title/page-title
     +pageTitle({ breadcrumbs: ['Главная'], pageTitle: 'Калькулятор' })

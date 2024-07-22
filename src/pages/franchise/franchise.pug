@@ -1,5 +1,8 @@
 extends layout/page
 
+block prepend head
+    - var title = 'Франшиза'
+
 block append main
     include components/page-hero/page-hero
     +page-hero({ title: 'Современная <span>финансовая франшиза</span> на IT платформе', image: require('assets/content/franchise-banner.jpg?as=webp'), mobileImage: require('assets/content/franchise-banner__mobile.jpg?as=webp') })

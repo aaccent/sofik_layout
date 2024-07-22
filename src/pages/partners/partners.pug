@@ -1,5 +1,8 @@
 extends layout/page
 
+block prepend head
+    - var title = 'Партнерам'
+
 block append main
     include components/partners-page-hero/partners-page-hero
     include components/content/content

@@ -1,6 +1,9 @@
 extends layout/page
 include layout/utils
 
+block prepend head
+    - var title = 'О нас'
+
 block append main
     include components/page-hero/page-hero
     +page-hero({title: 'О компании', isAboutPage: true})

@@ -1,6 +1,9 @@
 extends layout/page
 include layout/utils
 
+block prepend head
+    - var title = 'Услуга'
+
 block append main
     include components/page-hero/page-hero
     +page-hero({ title: 'Услуга', image: require('assets/content/service-banner.jpg?as=webp'), isServicePage: true })
