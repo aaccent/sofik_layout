@@ -50,14 +50,23 @@ function declHandler(decl) {
         return convertValue(decl.value, globalOpts.defaultMod)
     }
 
-    if (decl.prop === 'font') {
-        if (!cssVariableRegex.test(decl.value)) return
+    if (decl.prop === 'font' && cssVariableRegex.test(decl.value)) {
         const fontVariableName = decl.value.match(cssVariableRegex)[1]
         const fontSizeVariableName = allVariablesValues[fontVariableName]?.match(cssVariableRegex)?.[1]
 
         if (fontSizeVariableName && !fontVars.includes(fontSizeVariableName)) {
             fontVars.push(fontSizeVariableName)
+            return
         }
+    }
+
+    if (decl.prop === 'font') {
+        if (decl.value.startsWith('calc(')) return
+
+        return decl.value
+            .split(' ')
+            .map((i) => convertValue(i, globalOpts.fontSizeMod))
+            .join(' ')
     }
 
     if (decl.prop === 'font-size') {
