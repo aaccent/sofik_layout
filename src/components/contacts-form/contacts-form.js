@@ -1,12 +1,12 @@
 import { createYMap } from 'features/maps/createYMap'
 import { formSubmitHandler } from 'features/forms'
 
-createYMap('.contacts-form__map')
-
 void (function () {
     const contactsForm = document.querySelector('form.contacts-form__form')
 
     if (!contactsForm) return
+
+    createYMap('.contacts-form__map')
 
     contactsForm.addEventListener('submit', (e) => {
         e.preventDefault()
