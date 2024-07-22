@@ -20,15 +20,47 @@ html {
         border-top: 1px solid hsla(0, 0%, 7%, 0.15);
     }
 
-    &:first-child {
-        padding-top: 0;
+    &:is(.page-hero, .main-hero, .book-page-hero, .partners-page-hero) {
+        padding: 0;
+
+        & + .section {
+            border-top: none;
+        }
     }
 
     &-wrapper {
+        position: relative;
+        overflow: hidden;
         color: var(--white);
         background-color: var(--black);
 
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            @include utils.square(950px);
+            display: block;
+            pointer-events: none;
+            opacity: 0.2;
+            filter: blur(400px);
+            background: var(--375C);
+            border-radius: 100%;
+        }
+
+        &::before {
+            top: 50%;
+            left: -350px;
+            translate: 0 -50%;
+        }
+
+        &::after {
+            top: -325px;
+            right: -386px;
+        }
+
         .section {
+            position: relative;
+            z-index: 1;
             padding: 0;
             border: none;
 
@@ -105,12 +137,35 @@ html.disable-scroll {
         padding: 50px 0;
 
         &-wrapper {
+            &::before,
+            &::after {
+                display: none;
+            }
+
             .section {
                 padding: 50px 0;
 
                 .container {
-                    padding: 0;
+                    padding: 0 10px;
                     border: none;
+                }
+            }
+
+            .section:first-child {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -276px;
+                    left: -732px;
+                    @include utils.square(950px);
+                    display: block;
+                    pointer-events: none;
+                    opacity: 0.2;
+                    filter: blur(350px);
+                    background: var(--375C);
+                    border-radius: 100%;
                 }
             }
         }

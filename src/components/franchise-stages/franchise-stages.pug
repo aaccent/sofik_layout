@@ -1,0 +1,30 @@
+include layout/utils
+include components/stages/stages
+
+-
+    list = [
+        {
+            text: 'Подписание договора франчайзинга',
+            isActive: true,
+        },
+        {
+            text: 'Регистрация ИП',
+        },
+        {
+            text: 'Поиск и аренда помещения',
+        },
+        {
+            text: 'Подготовка помещения',
+        },
+        {
+            text: 'Рекламная компания',
+        },
+        {
+            text: 'Запуск бизнеса',
+        }
+    ]
+
+
++section.franchise-stages
+    h2.section__title 6 шагов к открытию
+    +stages({ list: list })

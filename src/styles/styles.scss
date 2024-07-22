@@ -18,6 +18,7 @@
 @use 'ui/input/input';
 @use 'ui/form/form';
 @use 'ui/breadcrumbs/breadcrumbs';
+@use 'ui/tabs/tabs';
 
 // Popup
 @use 'features/popup/popup';
@@ -33,12 +34,19 @@
 @use 'components/calculator/calculator';
 @use 'components/form-section/form-section';
 @use 'components/services/services';
-@use 'components/reasons/reasons';
 @use 'components/content/content';
 @use 'components/page-hero/page-hero';
 @use 'components/seo/seo';
+@use 'components/specialists/specialists';
 @use 'components/director/director';
 @use 'components/FAQ/FAQ';
+@use 'components/franchise-benefits/franchise-benefits';
+@use 'components/franchise-stages/franchise-stages';
+@use 'components/franchise-packages/franchise-packages';
+@use 'components/book-page-hero/book-page-hero';
+@use 'components/partners-page-hero/partners-page-hero';
+@use 'components/partners-stages/partners-stages';
+@use 'components/addresses/addresses';
 @use 'components/licenses/licenses';
 
 // Page

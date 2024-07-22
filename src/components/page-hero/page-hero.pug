@@ -10,8 +10,9 @@ mixin page-hero(props)
             isAboutPage: false,
             isServicePage: false,
         }, props || {})
+
+    +breadcrumbs(['Главная', 'Услуга'])
     +section.page-hero
-        +breadcrumbs(['Главная', 'Услуга'])
         if props.isServicePage
             .page-hero__banner._dark
                 +img(props.image).page-hero__image
