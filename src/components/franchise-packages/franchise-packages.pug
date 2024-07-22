@@ -1,0 +1,54 @@
+include layout/utils
+
+-
+    var list = [
+        {
+            title: 'Агент',
+            price: '150 000',
+            needAccent: false,
+            roalty: 'нет',
+            income: '131 000',
+        },
+        {
+            title: 'Партнёр',
+            price: '350 000',
+            needAccent: true,
+            roalty: '3% от выручки',
+            income: '230 000',
+        },
+    ]
+
++section.franchise-packages
+    h2.title Пакеты франшизы
+    ul.franchise-packages__list
+        each item in list
+            li.franchise-packages__item
+                .franchise-packages__item-title-wrapper
+                    span.franchise-packages__item-title= item.title
+                    span.franchise-packages__item-price #{ item.price } ₽
+                ul.franchise-packages__item-props
+                    -
+                        var priceClass = item.needAccent
+                                ? 'franchise-packages__item-props-item franchise-packages__item-props-item--accent'
+                                : 'franchise-packages__item-props-item'
+                    li(class=priceClass)
+                        span Паушальный взнос
+                        span #{ item.price } ₽
+                    li.franchise-packages__item-props-item
+                        span Инвестиции
+                        span 121 000 ₽
+                    li.franchise-packages__item-props-item.franchise-packages__item-props-item--bg
+                        span Роялти
+                        span= item.roalty
+                    li.franchise-packages__item-props-item--icon(class=priceClass)
+                        span Средняя чистая прибыль
+                        if item.needAccent
+                            span
+                                span #{ item.income } ₽#{ ' ' }
+                                | / месяц
+                        else
+                            span #{ item.income } ₽ / месяц
+                    li.franchise-packages__item-props-item.franchise-packages__item-props-item--icon
+                        span Окупаемость
+                        span 3 месяца
+                +popupBtn('call').button Обсудить сотрудничество

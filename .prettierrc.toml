@@ -187,5 +187,7 @@ cssDeclarationSorterCustomOrder = [
     "nav-up",
     "nav-right",
     "nav-down",
-    "nav-left"
+    "nav-left",
+    "mask",
+    "mask-composite",
 ]
