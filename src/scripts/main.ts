@@ -12,6 +12,7 @@ import '@/components/our-projects/our-projects.js'
 import '@/components/seo/seo.js'
 import '@/components/FAQ/FAQ.js'
 import '@/components/specialists/specialists.js'
+import '@/components/licenses/licenses.js'
 import '@/components/contacts-form/contacts-form.js'
 
 import '@/ui/file-input/file-input.js'
