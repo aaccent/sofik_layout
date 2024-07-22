@@ -15,7 +15,16 @@
             position: relative;
             top: 2px;
             background-image: url('assets/icons/check.svg');
+            @include utils.bg-defaults;
             @include utils.square(24px);
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .check-list {
+        li::before {
+            top: -1px;
         }
     }
 }
