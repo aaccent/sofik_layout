@@ -1,6 +1,10 @@
 extends layout/page
 
+block prepend head
+    - var title = 'Контакты'
+
 block append main
     include ui/breadcrumbs/breadcrumbs
     +breadcrumbs(['Главная'])
     include components/addresses/addresses
+    include components/contacts-form/contacts-form
