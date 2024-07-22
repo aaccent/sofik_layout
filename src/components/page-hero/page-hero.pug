@@ -24,4 +24,4 @@ mixin page-hero(props)
                 picture
                     source(srcset=props.mobileImage, media='(max-width:1000px)')
                     +img(props.image).page-hero__image
-        h1.page-hero__title Название подуслуги
+        h1.page-hero__title!= props.title

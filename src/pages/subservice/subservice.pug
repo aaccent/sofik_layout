@@ -1,0 +1,10 @@
+extends layout/page
+include layout/utils
+
+block append main
+    include components/page-hero/page-hero
+    +page-hero({ title: 'Подуслуга', image: require('assets/content/service-banner.jpg?as=webp'), isServicePage: true })
+    include components/content/content
+    include components/reasons/reasons
+    include components/FAQ/FAQ
+    include components/seo/seo
