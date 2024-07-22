@@ -1,0 +1,6 @@
+extends layout/page
+
+block append main
+    include ui/page-title/page-title
+    +pageTitle({ breadcrumbs: ['Главная'], pageTitle: 'Медиацентр' })
+    include components/blog/blog

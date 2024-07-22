@@ -1,13 +1,6 @@
 @use 'styles/utils';
 
 .addresses {
-    padding-top: 90px;
-
-    &__title {
-        margin-bottom: 50px;
-        font-size: 7.2rem;
-    }
-
     &__items {
         display: flex;
         gap: 30px;
@@ -63,12 +56,6 @@
 
 @media only screen and (max-width: utils.$tablet1200) {
     .addresses {
-        padding-top: 62px;
-
-        &__title {
-            font-size: 3.2rem;
-        }
-
         &__items {
             flex-direction: column;
         }

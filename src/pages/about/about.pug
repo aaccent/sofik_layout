@@ -1,0 +1,12 @@
+extends layout/page
+include layout/utils
+
+block append main
+    include components/page-hero/page-hero
+    +page-hero({title: 'О компании', isAboutPage: true})
+    include components/content/content
+    include components/director/director
+    include components/reasons/reasons
+    include components/specialists/specialists
+    include components/our-projects/our-projects
+    include components/licenses/licenses

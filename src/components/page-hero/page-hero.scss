@@ -36,8 +36,14 @@
         position: absolute;
         top: 100px;
         left: 130px;
+        width: 100%;
+        max-width: 952px;
         color: var(--white);
         font: 400 7.2rem var(--manrope);
+
+        span {
+            color: var(--375C);
+        }
     }
 
     &__image {

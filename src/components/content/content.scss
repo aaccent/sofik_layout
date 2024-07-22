@@ -1,6 +1,8 @@
 @use 'styles/utils';
 
 .content {
+    padding: 100px 0;
+
     .container *:not(:is(img)) {
         width: 100%;
         max-width: 1053px;
@@ -90,6 +92,8 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
     .content {
+        padding: 50px 0;
+
         h2 {
             margin-bottom: 10px;
             font-size: 2.4rem;

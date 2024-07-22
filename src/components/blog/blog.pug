@@ -1,0 +1,70 @@
+include layout/utils
+
+-
+    var blog = [
+        {
+            badge: 'Блог',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog.jpg')
+        },{
+            badge: 'Блог',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog2.jpg')
+        },{
+            badge: 'Новости',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog3.jpg')
+        },{
+            badge: 'Блог',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog3.jpg')
+        },{
+            badge: 'Новости',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog.jpg')
+        },{
+            badge: 'Блог',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog2.jpg')
+        },{
+            badge: 'Новости',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog.jpg')
+        },{
+            badge: 'Новости',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog3.jpg')
+        },{
+            badge: 'Новости',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog.jpg')
+        },{
+            badge: 'Блог',
+            title: 'Название новости',
+            description: 'Описание новости, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+            image: require('assets/content/blog/blog3.jpg')
+        },
+    ]
+
++section.blog
+    .blog-filter
+        button.blog-filter__button._active Всё
+        button.blog-filter__button Блог
+        button.blog-filter__button Новости
+    .blog__list
+        each item in blog
+            .blog__item
+                +img(item.image).blog__item-image
+                .blog__item-badge= item.badge
+                .blog__item-title= item.title
+                .blog__item-description= item.description
+    button.blog__button Показать ещё

@@ -1,9 +1,15 @@
 @use 'styles/utils';
 
-.breadcrumbs:has(+ .addresses) {
-    top: 50px;
-    left: 30px;
+.breadcrumbs:has(+ .addresses, + .page-title) {
+    position: static;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-left: 30px;
     color: var(--black);
+}
+
+.breadcrumbs + :is(.section, .page-title) {
+    margin-top: 0;
 }
 
 .breadcrumbs {
@@ -26,9 +32,9 @@
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
-    .breadcrumbs:has(+ .addresses) {
-        top: 30px;
-        left: 10px;
+    .breadcrumbs:has(+ .addresses, + .page-title) {
+        margin-top: 30px;
+        padding-left: 10px;
     }
 
     .breadcrumbs {
