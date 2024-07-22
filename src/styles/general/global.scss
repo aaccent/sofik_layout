@@ -20,7 +20,7 @@ html {
         border-top: 1px solid hsla(0, 0%, 7%, 0.15);
     }
 
-    &:is(.page-hero, .main-hero, .book-page-hero) {
+    &:is(.page-hero, .main-hero, .book-page-hero, .partners-page-hero) {
         padding: 0;
 
         & + .section {

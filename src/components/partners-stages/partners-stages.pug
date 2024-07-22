@@ -1,0 +1,19 @@
+include layout/utils
+include components/stages/stages
+
+-
+    var list = [
+        {
+            text: 'Оставьте заявку на сайте',
+        },
+        {
+            text: 'Пройдите согласование с нашим менеджером'
+        },
+        {
+            text: 'Пройдите согласование с нашим менеджером'
+        }
+    ]
+
++section.partners-stages
+    h2.section__title 3 простых шага, чтобы начать зарабатывать
+    +stages({ list: list })

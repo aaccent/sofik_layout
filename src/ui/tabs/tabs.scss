@@ -1,12 +1,10 @@
 @use 'styles/utils';
 
-.reasons {
-    &-list {
-        margin-top: 50px;
-        display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
+.tabs {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 
     &__item {
         padding: 50px;
@@ -23,6 +21,11 @@
             background-color: rgba(183, 212, 75, 0.15);
             border-radius: 20px;
             @include utils.square(72px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--370C);
+            font-size: 3.2rem;
         }
 
         &-title {
@@ -49,11 +52,9 @@
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
-    .reasons {
-        &-list {
-            flex-direction: column;
-            gap: 20px;
-        }
+    .tabs {
+        flex-direction: column;
+        gap: 20px;
 
         &__item {
             padding: 20px;
