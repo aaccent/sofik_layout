@@ -1,0 +1,22 @@
+include layout/utils
+include ui/input/input
+
++section.section--black.contacts-form
+    .contacts-form__body
+        h2.title Оставьте заявку на#[br]бесплатную консультацию
+        // Важно добавить novalidate
+        // Для обработчика необходимо добавить путь в атрибут data-handler
+        form.contacts-form__form(data-handler='some-handler.php', novalidate)
+            .contacts-form__form-inputs
+                +field({ type: 'text', placeholder: 'Ваше имя', name: 'name', required: true, })
+                +field({ type: 'tel', placeholder: 'Ваш номер', name: 'tel', required: true, })
+                +field({ type: 'email', placeholder: 'Email', name: 'email', required: true, })
+                +field({ type: 'text', placeholder: 'Комментарий', name: 'comment' })
+            include ui/file-input/file-input
+            +wrapBreak: button.button(type='submit') Получить консультацию
+            .contacts-form__form-privacy
+                | Нажимая на кнопку «получить консультацию» вы
+                | подтверждаете своё согласие с#{ ' ' }
+                a(href='#') политикой конфиденциальности#{ ' ' }
+                | сайта
+    .contacts-form__map(data-key='cf5a9a09-c37c-44fa-81ce-c0a77fe3f749')

@@ -16,7 +16,8 @@ html(lang='ru')
         .main-wrapper
             main.main
                 block main
-                include components/form-section/form-section
+                unless title === 'Контакты'
+                    include components/form-section/form-section
             include footer/footer
 
         block scripts
