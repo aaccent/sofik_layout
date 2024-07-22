@@ -1,0 +1,27 @@
+include layout/utils
+include ui/breadcrumbs/breadcrumbs
+
+-
+    var partners = [
+        require('assets/content/amazon.svg'),
+        require('assets/content/litres.svg'),
+        require('assets/content/ozon.svg'),
+        require('assets/content/ridero.svg'),
+        require('assets/content/wb.svg'),
+        require('assets/content/wb-dig.svg')
+    ]
+
++section.book-page-hero
+    +breadcrumbs(['Главная'])
+    .book-page-hero__banner
+        h1.book-page-hero__title <span> БАНКОВСКАЯ ГАРАНТИЯ</span><br> Как её получить, сэкономить или построить на этом бизнес
+        .book-page-hero__info
+            .book-page-hero__subtitle Закажите печатный формат книги, которая будет доставлена прямо к вашему дверному порогу.
+            ul.book-page-hero__partners-list
+                each item in partners
+                    li.book-page-hero__partner
+                        +anchor
+                            +img(item).book-page-hero__partner-image
+        picture
+            source(srcset=require('assets/content/book-page-hero__mobile.jpg'), media='(max-width: 1000px)')
+            +img(require('assets/content/book-page-hero.jpg')).book-page-hero__image
