@@ -1,6 +1,11 @@
 extends layout/page
 
 block append main
+    include components/page-hero/page-hero
+    +page-hero({ title: 'Современная <span>финансовая франшиза</span> на IT платформе', image: require('assets/content/franchise-banner.jpg?as=webp'), mobileImage: require('assets/content/franchise-banner__mobile.jpg?as=webp') })
+    include components/content/content
     .section-wrapper
         include components/franchise-benefits/franchise-benefits
         include components/franchise-packages/franchise-packages
+    include components/franchise-stages/franchise-stages
+    include components/reasons/reasons
