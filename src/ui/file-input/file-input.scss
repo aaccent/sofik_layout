@@ -1,0 +1,67 @@
+@use 'styles/utils';
+
+.file-input {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    &__files {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__file {
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 2.4rem;
+        background-color: hsl(0, 0%, 100%, 0.15);
+        border-radius: 20px;
+
+        &::before {
+            content: '';
+            @include utils.square(24px);
+            display: block;
+            filter: brightness(10);
+            background-image: url('assets/icons/close.svg');
+            @include utils.bg-defaults;
+        }
+    }
+
+    &__button {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-size: 2.4rem;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            background-image: url('assets/icons/clip.svg');
+            @include utils.bg-defaults;
+            @include utils.square(24px);
+            display: block;
+        }
+
+        input {
+            position: absolute;
+            visibility: hidden;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .file-input {
+        &__button {
+            font-size: 1.6rem;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+include layout/utils
+include ui/breadcrumbs/breadcrumbs
+
+mixin pageTitle(props)
+    -
+        var props = Object.assign({
+            breadcrumbs: [],
+            pageTitle: ''
+        }, props || {})
+
+    +breadcrumbs(props.breadcrumbs)
+    .page-title
+        .container
+            h1= props.pageTitle

@@ -31,3 +31,31 @@
         }
     }
 }
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .director {
+        &__content {
+            flex-direction: column;
+            gap: 0;
+
+            &-image {
+                margin-bottom: 30px;
+                height: 263px;
+            }
+
+            &-positon {
+                margin-bottom: 10px;
+                font-size: 1.6rem;
+            }
+
+            &-name {
+                margin-bottom: 20px;
+                font-size: 2.4rem;
+            }
+
+            &-phrase {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
