@@ -1,5 +1,11 @@
 @use 'styles/utils';
 
+.breadcrumbs:has(+ .addresses) {
+    top: 50px;
+    left: 30px;
+    color: var(--black);
+}
+
 .breadcrumbs {
     position: absolute;
     z-index: 3;
@@ -20,6 +26,11 @@
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
+    .breadcrumbs:has(+ .addresses) {
+        top: 30px;
+        left: 10px;
+    }
+
     .breadcrumbs {
         top: 50px;
         left: 10px;
