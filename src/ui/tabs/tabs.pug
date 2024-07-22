@@ -1,0 +1,17 @@
+include layout/utils
+
+mixin tabs(props)
+    -
+        props = Object.assign({
+            isOnPartnersPage: false,
+            listItems: []
+        }, props || {})
+    .tabs
+        each item, index in list.listItems
+            .tabs__item(class=item.class)
+                if list.isOnPartnersPage
+                    .tabs__item-icon!= `0${index + 1}`
+                else
+                    +img(item.icon).tabs__item-icon
+                .tabs__item-title!= item.title
+                .tabs__item-description= item.description

@@ -1,40 +1,39 @@
 include layout/utils
+include ui/tabs/tabs
 
 -
-    var reasons = [
-        {
-            title: 'Выпуск финансового продукта за <span>1 день</span>',
-            description: 'Оперативное взаимодействие с кредитно-финансовыми учреждениями',
-            icon: require('assets/icons/reasons/reason.svg'),
-            class: ''
-        },{
-            title: 'Комиссия за услуги <span>0%</span>',
-            description: 'Вы заключаете договор с банком напрямую и оплачиваете только комиссию банка',
-            icon: require('assets/icons/reasons/reason2.svg'),
-            class: ''
-        },{
-            title: 'Одобрение в <span>95%</span> случаев',
-            description: 'У нас за плечами более 10 лет помощи бизнесу. Одобрение получают 9 из 10 заявок',
-            icon: require('assets/icons/reasons/reason3.svg'),
-            class: ''
-        },{
-            title: 'Без посещения офиса',
-            description: 'Работаем дистанционно во всех регионах РФ, полностью электронный документооборот',
-            icon: require('assets/icons/reasons/reason4.svg'),
-            class: '_half'
-        },{
-            title: 'Для большинства финансовых продуктов потребуется минимальный пакет документов',
-            description: '',
-            icon: require('assets/icons/reasons/reason5.svg'),
-            class: '_half'
-        },
-    ]
+    var list = {
+        isOnPartnersPage: false,
+        listItems: [
+            {
+                title: 'Выпуск финансового продукта за <span>1 день</span>',
+                description: 'Оперативное взаимодействие с кредитно-финансовыми учреждениями',
+                icon: require('assets/icons/reasons/reason.svg'),
+                class: ''
+            }, {
+                title: 'Комиссия за услуги <span>0%</span>',
+                description: 'Вы заключаете договор с банком напрямую и оплачиваете только комиссию банка',
+                icon: require('assets/icons/reasons/reason2.svg'),
+                class: ''
+            }, {
+                title: 'Одобрение в <span>95%</span> случаев',
+                description: 'У нас за плечами более 10 лет помощи бизнесу. Одобрение получают 9 из 10 заявок',
+                icon: require('assets/icons/reasons/reason3.svg'),
+                class: ''
+            }, {
+                title: 'Без посещения офиса',
+                description: 'Работаем дистанционно во всех регионах РФ, полностью электронный документооборот',
+                icon: require('assets/icons/reasons/reason4.svg'),
+                class: '_half'
+            }, {
+                title: 'Для большинства финансовых продуктов потребуется минимальный пакет документов',
+                description: '',
+                icon: require('assets/icons/reasons/reason5.svg'),
+                class: '_half'
+            },
+        ]
+    }
 
 +section.reasons
     h2.section__title Почему 95% клиентов выбирают СОФИК
-    .reasons-list
-        each item in reasons
-            .reasons__item(class=item.class)
-                +img(item.icon).reasons__item-icon
-                .reasons__item-title!= item.title
-                .reasons__item-description= item.description
+    +tabs(list)
