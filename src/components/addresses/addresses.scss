@@ -1,0 +1,98 @@
+@use 'styles/utils';
+
+.addresses {
+    padding-top: 90px;
+
+    &__title {
+        margin-bottom: 50px;
+        font-size: 7.2rem;
+    }
+
+    &__items {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__block {
+        position: relative;
+        padding: 20px 30px;
+        width: 100%;
+        min-height: 235px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--gray);
+        border-radius: 20px;
+
+        &-title,
+        &-subtext {
+            font-size: 2.4rem;
+            opacity: 0.4;
+        }
+
+        &-text {
+            max-width: 485px;
+            display: block;
+            font-size: 3.2rem;
+        }
+
+        &-title + &-text {
+            margin-top: auto;
+        }
+
+        &-text + &-text {
+            margin-top: 20px;
+        }
+
+        &-subtext {
+            margin-top: 10px;
+        }
+
+        &-links {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            gap: 30px;
+
+            &-item {
+                @include utils.square(42px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .addresses {
+        padding-top: 62px;
+
+        &__title {
+            font-size: 3.2rem;
+        }
+
+        &__items {
+            flex-direction: column;
+        }
+
+        &__block {
+            padding: 20px;
+            min-height: 285px;
+
+            &-title {
+                margin-bottom: 30px;
+            }
+
+            &-text {
+                font-size: 2.4rem;
+            }
+
+            &-subtext {
+                font-size: 2rem;
+            }
+
+            &-links {
+                position: static;
+                margin-top: 30px;
+            }
+        }
+    }
+}

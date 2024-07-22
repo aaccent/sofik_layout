@@ -1,0 +1,19 @@
+include layout/utils
+
++section.addresses
+    h1.addresses__title Контакты
+    .addresses__items
+        .addresses__block
+            .addresses__block-title Телефон / Почта
+            +anchor('tel:8 495 190 79 91').addresses__block-text 8 495 190 79 91
+            +anchor('mailto:info@sfc24.ru').addresses__block-text info@sfc24.ru
+            .addresses__block-links
+                +anchor.addresses__block-links-item: include icons/ok
+                +anchor.addresses__block-links-item: include icons/vk
+                +anchor.addresses__block-links-item: include icons/dzen
+        .addresses__block
+            .addresses__block-title Адрес
+            .addresses__block-text Московская обл., Раменское, ул. Карла Маркса, 5, оф. 218а
+            .addresses__block-subtext Пн-Пт с 9 до 18
+            .addresses__block-links
+                +anchor.addresses__block-links-item: include icons/geo
