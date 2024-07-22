@@ -1,8 +1,7 @@
 void (function () {
     const seoText = document.querySelector('.seo__text')
+    if (!seoText) return
     const moreBtn = document.querySelector('.seo__button')
-
-    if (!seoText || !moreBtn) return
 
     moreBtn.addEventListener('click', () => {
         seoText.classList.toggle('_opened')

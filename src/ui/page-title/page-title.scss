@@ -1,0 +1,23 @@
+@use 'styles/utils';
+
+.page-title {
+    margin-bottom: 50px;
+
+    & + section {
+        padding-top: 0;
+    }
+
+    h1 {
+        font: 400 7.2rem var(--manrope);
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .page-title {
+        margin: 30px 0;
+
+        h1 {
+            font-size: 3.2rem;
+        }
+    }
+}

@@ -20,6 +20,7 @@
 @use 'ui/breadcrumbs/breadcrumbs';
 @use 'ui/tabs/tabs';
 @use 'ui/file-input/file-input';
+@use 'ui/page-title/page-title';
 
 // Popup
 @use 'features/popup/popup';
@@ -50,6 +51,7 @@
 @use 'components/addresses/addresses';
 @use 'components/licenses/licenses';
 @use 'components/contacts-form/contacts-form';
+@use 'components/blog/blog';
 
 // Page
 @use 'layout/cookie-notification/cookie-notification';

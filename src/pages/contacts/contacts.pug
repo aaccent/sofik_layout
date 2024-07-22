@@ -4,7 +4,7 @@ block prepend head
     - var title = 'Контакты'
 
 block append main
-    include ui/breadcrumbs/breadcrumbs
-    +breadcrumbs(['Главная'])
+    include ui/page-title/page-title
+    +pageTitle({ breadcrumbs: ['Главная'], pageTitle: 'Контакты' })
     include components/addresses/addresses
     include components/contacts-form/contacts-form
