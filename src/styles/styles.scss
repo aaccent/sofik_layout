@@ -8,6 +8,7 @@
 @use 'node_modules/swiper/modules/pagination';
 @use 'node_modules/swiper/modules/scrollbar' as swiper-scrollbar;
 @use 'node_modules/swiper/modules/effect-fade';
+@use 'node_modules/@fancyapps/ui/dist/fancybox.css';
 
 // Ui
 @use 'ui/buttons/close-btn';

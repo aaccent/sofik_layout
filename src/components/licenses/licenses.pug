@@ -6,8 +6,7 @@ include layout/utils
         .swiper-wrapper
             - var img = require('assets/content/licenses.jpg')
             each _ in Array(8)
-                .licenses__item.swiper-slide
-                    +wrapBreak: a(href=img, data-fancybox='gallery', target='_blank')
-                        +img(img).licenses__item-image
+                +wrapBreak: a.licenses__item.swiper-slide(href=img, data-fancybox='gallery')
+                    +img(img).licenses__item-image
                     .licenses__item-title Базовая лицензия на осуществление банковской деятельности
         .scrollbar.swiper-scrollbar
