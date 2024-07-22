@@ -9,16 +9,16 @@ function clearRequiredInputs(form: HTMLFormElement) {
 
 const forms = document.querySelectorAll<HTMLFormElement>('form[data-handler]')
 forms.forEach((form) => {
-    form.addEventListener('submit', submitHandler)
+    form.addEventListener('submit', formSubmitHandler)
 })
 
 const formSent = new CustomEvent('formSent')
 
-function submitHandler(e: SubmitEvent) {
+export function formSubmitHandler(e: SubmitEvent, ownFormData?: FormData) {
     e.preventDefault()
 
     const form = e.currentTarget as HTMLFormElement
-    const formData = new FormData(form)
+    const formData = ownFormData || new FormData(form)
 
     const handlerPath = form.dataset.handler
     if (!handlerPath) return console.error('data-handler should be not empty. Form element:\n', form)

@@ -1,0 +1,83 @@
+@use 'styles/utils';
+
+.contacts-form {
+    .container {
+        display: flex;
+        gap: 40px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+    }
+
+    &__body {
+        max-width: 920px;
+        flex-grow: 1.1;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-inputs {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            gap: 20px;
+
+            :is(.field, .field__wrapper) {
+                grid-column: span 2;
+            }
+
+            :is(.field, .field__wrapper):nth-child(1),
+            :is(.field, .field__wrapper):nth-child(2) {
+                grid-column: span 1;
+            }
+        }
+
+        .button[type='submit'] {
+            height: 130px;
+        }
+
+        &-privacy {
+            font-size: 1.6rem;
+            opacity: 0.5;
+        }
+    }
+
+    &__map {
+        flex-grow: 1;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1200) {
+    .contacts-form {
+        .container {
+            flex-direction: column;
+        }
+
+        &__form {
+            &-inputs {
+                grid-template-columns: 1fr;
+
+                :is(.field, .field__wrapper) {
+                    grid-column: span 1;
+                }
+            }
+
+            .button[type='submit'] {
+                height: 62px;
+            }
+
+            &-privacy {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__map {
+            height: 350px;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 include layout/utils
 include ui/input/input
 
+// Важно добавить novalidate
+// Для обработчика необходимо добавить путь в атрибут data-handler
 form.form(novalidate, data-handler='/action.php')
     +field({ placeholder: 'Ваше имя', name: 'name', type: 'text', required: true })
     +field({ placeholder: 'Ваш номер', name: 'tel', type: 'tel', required: true })
