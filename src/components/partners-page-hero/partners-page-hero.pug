@@ -1,0 +1,11 @@
+include layout/utils
+include ui/breadcrumbs/breadcrumbs
+
++section.partners-page-hero
+    +breadcrumbs(['Главная'])
+    picture
+        source(srcset=require('assets/content/partners-page-hero__mobile.jpg?as=webp'), media='(max-width: 1000px)')
+        +img(require('assets/content/partners-page-hero.jpg?as=webp')).partners-page-hero__image
+    .partners-page-hero__content
+        h1.partners-page-hero__title Станьте агентом по выдаче банковских гарантий
+        +popupBtn('call').partners-page-hero__button.button Стать нашим агентом
