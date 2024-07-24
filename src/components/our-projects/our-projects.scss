@@ -5,6 +5,17 @@
         margin-bottom: 50px;
     }
 
+    &__button {
+        position: absolute;
+        top: 150px;
+        right: 30px;
+        padding: 20px;
+        display: block;
+        font-size: 2.4rem;
+        border-radius: 20px;
+        border: 1px solid var(--375C);
+    }
+
     &__list {
         margin-bottom: 50px;
     }
@@ -46,8 +57,19 @@
 
 @media only screen and (max-width: utils.$tablet1200) {
     .our-projects {
+        padding-bottom: 142px;
+
         .title {
             margin-bottom: 30px;
+        }
+
+        &__button {
+            top: initial;
+            right: 10px;
+            bottom: 50px;
+            left: 10px;
+            font-size: 1.6rem;
+            text-align: center;
         }
 
         .swiper-slide {
