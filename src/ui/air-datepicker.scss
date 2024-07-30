@@ -1,0 +1,55 @@
+@use 'node_modules/air-datepicker/air-datepicker.css';
+@use 'styles/utils';
+
+.air-datepicker-global-container {
+    position: absolute;
+    right: -70px;
+    bottom: -210px;
+
+    .air-datepicker {
+        color: var(--white);
+        background-color: var(--black);
+        border-radius: 16px;
+        border: none;
+
+        &-nav {
+            color: var(--white);
+            border: none;
+
+            &--title,
+            &--title i {
+                color: var(--white);
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+
+        &-body--day-name {
+            color: hsla(231, 5%, 50%, 1);
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+
+        &-cell.-day- {
+            font-size: 1.5rem;
+            font-weight: 400;
+
+            &.-current- {
+                color: var(--white);
+                font-weight: 600;
+            }
+
+            &.-selected-,
+            &.-focus- {
+                color: var(--black);
+                font-weight: 600;
+                background-color: var(--white);
+            }
+
+            &.-other-month- {
+                color: hsla(234, 4%, 28%, 1);
+            }
+        }
+    }
+}
