@@ -45,6 +45,5 @@ void (function () {
         start: 'top 70%',
         once: true,
         onEnter: () => stagesAnimation(stages),
-        markers: true,
     })
 })()
