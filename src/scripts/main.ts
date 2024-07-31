@@ -15,5 +15,6 @@ import '@/components/specialists/specialists.js'
 import '@/components/licenses/licenses.js'
 import '@/components/contacts-form/contacts-form.js'
 import '@/components/blog/blog.js'
+import '@/components/stages/stages.js'
 
 import '@/ui/file-input/file-input.js'

@@ -14,7 +14,7 @@
         // --progress меняет длинную полоску.
         // --dot-progress меняет точку после полоски.
         // Можно добавить класс .stages__list-item--active для смены стрелки и цвета текста
-        --progress: 100%;
+        --progress: 0;
         --dot-progress: 0;
         position: relative;
         width: 100%;
