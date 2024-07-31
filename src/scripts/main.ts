@@ -16,5 +16,6 @@ import '@/components/licenses/licenses.js'
 import '@/components/contacts-form/contacts-form.js'
 import '@/components/blog/blog.js'
 import '@/components/calculator/calculator.js'
+import '@/ui/popups/call-popup/call-popup.js'
 
 import '@/ui/file-input/file-input.js'

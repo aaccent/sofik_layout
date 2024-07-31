@@ -2,9 +2,7 @@
 @use 'styles/utils';
 
 .air-datepicker-global-container {
-    position: absolute;
-    right: -70px;
-    bottom: -210px;
+    position: static;
 
     .air-datepicker {
         color: var(--white);

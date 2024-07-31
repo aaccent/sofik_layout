@@ -3,9 +3,17 @@ import AirDatepicker from 'air-datepicker'
 import { suggestionPluralDay, suggestionPluralRubles } from 'features/pluralRules.ts'
 
 document.querySelectorAll('input').forEach((input) => input.setAttribute('autocomplete', 'off'))
+
 let amount
 let period
-let rate = 0.015
+let rate
+
+void (function () {
+    const resultOutput = document.querySelector('.calculator__field-rate')
+    if (!resultOutput) return
+    resultOutput.setAttribute('data-value', '0.015')
+    rate = Number(resultOutput.getAttribute('data-value'))
+})()
 
 function showResult() {
     const resultOutput = document.querySelector('.calculator__field-output')
@@ -42,6 +50,8 @@ void (function () {
 void (function () {
     const amountInput = document.querySelector('.field._amount input')
     const periodInput = document.querySelector('.field._period input')
+
+    if (!amountInput || !periodInput) return
 
     const amountMasked = IMask(amountInput, {
         mask: Number,
@@ -81,6 +91,7 @@ function showPeriod(arr, input) {
 
 void (function () {
     const field = document.querySelector('.field._period')
+    if (!field) return
     const input = field.querySelector('input')
 
     const pseudoInput = document.createElement('input')
@@ -118,14 +129,14 @@ void (function () {
             selected.textContent = option.textContent
             hiddenInput.value = option.textContent
             if (option.textContent === 'Коммерческий контракт') {
-                rateOutput.textContent = '3% годовых'
-                rate = 0.03
-                showResult()
+                rateOutput.setAttribute('data-value', '0.03')
+                rate = Number(rateOutput.getAttribute('data-value'))
             } else {
-                rateOutput.textContent = '1.5% годовых'
-                rate = 0.015
-                showResult()
+                rateOutput.setAttribute('data-value', '0.015')
+                rate = rateOutput.getAttribute('data-value')
             }
+            rateOutput.textContent = `${rate * 100}% годовых`
+            showResult()
         })
     })
 })()
