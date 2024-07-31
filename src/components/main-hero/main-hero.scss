@@ -3,6 +3,11 @@
 .main-hero {
     padding: 0;
 
+    .stroke {
+        stroke: red;
+        stroke-width: 10;
+    }
+
     &__slide {
         width: 100%;
         height: 960px;
@@ -61,15 +66,70 @@
             align-items: center;
 
             .swiper-pagination-bullet {
+                --time: 5;
                 @include utils.square(20px);
+                position: relative;
                 margin: 0 !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 opacity: 1 !important;
                 background-color: transparent;
                 border: 1px solid var(--375C);
 
+                span {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    display: none;
+
+                    svg {
+                        --time: 0;
+                        stroke-width: 4px;
+                        -webkit-animation: rotate 5s linear infinite;
+                        -webkit-transform-origin: center center;
+                        -ms-transform-origin: center center;
+                        position: absolute;
+                        z-index: 10;
+                        top: 0;
+                        left: 0;
+                        transform-origin: center center;
+                        width: 100%;
+                        height: 100%;
+                        fill: none;
+                        animation: rotate 5s linear infinite;
+
+                        .loader {
+                            stroke-dasharray: 150, 200;
+                            stroke-dashoffset: -10;
+                            -webkit-animation:
+                                dash 5s,
+                                color 5s;
+                            stroke-linecap: round;
+                            animation:
+                                dash 5s ease-in-out infinite,
+                                color 5s ease-in-out infinite;
+                        }
+                    }
+                }
+
                 &-active {
-                    background-color: var(--375C);
-                    @include utils.square(10px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border-color: transparent;
+
+                    span {
+                        display: block;
+                    }
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        @include utils.circle(10px);
+                        background-color: var(--375C);
+                    }
                 }
             }
         }
@@ -121,5 +181,63 @@
                 display: none;
             }
         }
+    }
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+@-webkit-keyframes color {
+    0% {
+        stroke: var(--375C);
+    }
+    100% {
+        stroke: var(--375C);
+    }
+}
+@keyframes color {
+    0% {
+        stroke: var(--375C);
+    }
+    100% {
+        stroke: var(--375C);
     }
 }
