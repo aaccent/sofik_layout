@@ -1,6 +1,19 @@
 @use 'styles/utils';
 
 .calculator {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: block;
+        @include utils.circle(718px);
+        opacity: 0.2;
+        filter: blur(1000px);
+        background-color: hsla(73, 61%, 56%, 1);
+    }
+
     &:has(.calculator__selector._active) {
         padding-bottom: 283px;
     }

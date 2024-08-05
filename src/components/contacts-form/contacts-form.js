@@ -7,6 +7,8 @@ void (function () {
     if (!contactsForm) return
     createYMap('.contacts-form__map')
 
+    createYMap('.contacts-form__map')
+
     contactsForm.addEventListener('submit', (e) => {
         e.preventDefault()
 

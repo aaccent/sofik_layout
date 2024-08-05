@@ -33,6 +33,7 @@
         flex-direction: column;
         cursor: pointer;
         background-color: var(--gray);
+        background-image: linear-gradient(315deg, rgba(183, 212, 75, 0.09) 0%, rgba(183, 212, 75, 0) 100%);
         border-radius: 20px;
 
         &-img {
