@@ -4,7 +4,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function stagesAnimation(stages) {
+void (function () {
+    const stagesList = document.querySelector('.stages__list')
+    if (!stagesList) return
+
+    const active = stagesList.querySelector('.stages__list-item--active')
+    if (active) active.classList.remove('stages__list-item--active')
+    const stages = stagesList.querySelectorAll('.stages__list-item')
+
     const tl = gsap.timeline()
     stages.forEach((stage) => {
         tl.fromTo(
@@ -26,24 +33,16 @@ function stagesAnimation(stages) {
             },
             {
                 '--dot-progress': '100%',
-                duration: 0.5,
+                duration: 0.15,
                 ease: 'none',
             },
         )
     })
-}
-
-void (function () {
-    const stagesList = document.querySelector('.stages__list')
-    if (!stagesList) return
-    const active = stagesList.querySelector('.stages__list-item--active')
-    if (active) active.classList.remove('stages__list-item--active')
-    const stages = stagesList.querySelectorAll('.stages__list-item ')
 
     ScrollTrigger.create({
         trigger: stagesList,
         start: 'top 70%',
         once: true,
-        onEnter: () => stagesAnimation(stages),
+        animation: tl,
     })
 })()
