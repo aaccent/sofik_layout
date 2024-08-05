@@ -1,6 +1,8 @@
 import Swiper from 'swiper'
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules'
 
+const DELAY = 5000
+
 new Swiper('.main-hero .swiper', {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
     navigation: {
@@ -15,23 +17,22 @@ new Swiper('.main-hero .swiper', {
     crossFade: true,
 
     autoplay: {
-        delay: 5000,
+        delay: DELAY,
         disableOnInteraction: false,
     },
     on: {
-        init: () => {
+        init: (swiper) => {
             const bullets = document.querySelectorAll('.swiper-pagination-bullet')
             bullets.forEach((bullet) => {
                 const span = document.createElement('span')
                 span.innerHTML = `<svg viewBox="0 0 48 48">
-          <circle cx="24" cy="24" r="20" class="loader"></circle>
-        </svg>`
+                  <circle cx="24" cy="24" r="20" class="loader"></circle>
+                </svg>`
+
                 bullet.append(span)
             })
-        },
-        autoplayTimeLeft(s, time, progress) {
-            const bullet = document.querySelector('.swiper-pagination-bullet')
-            bullet.style.setProperty('--time', time / 1000)
+
+            swiper.el.style.setProperty('--time', `${DELAY + 1300}ms`)
         },
     },
 })
