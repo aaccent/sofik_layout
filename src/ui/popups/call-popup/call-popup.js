@@ -1,12 +1,12 @@
-import { formSubmitHandler } from 'features/forms'
+import { openPopup } from 'features/popup/popup'
 
 void (function () {
+    const calculatorForm = document.querySelector('form.calculator__form')
     const popupForm = document.querySelector('.call-popup form')
 
-    popupForm.addEventListener('submit', (e) => {
+    calculatorForm.addEventListener('submit', (e) => {
+        openPopup('call')
         e.preventDefault()
-
-        const form = e.currentTarget
 
         const amount = document.createElement('input')
         amount.setAttribute('type', 'hidden')
@@ -28,10 +28,6 @@ void (function () {
         result.setAttribute('name', 'resultValue')
         result.value = document.querySelector('.calculator__field-output').value
 
-        form.append(amount, period, rate, result)
-
-        const formData = new FormData(form)
-
-        formSubmitHandler(e, formData)
+        popupForm.append(amount, period, rate, result)
     })
 })()
