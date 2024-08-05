@@ -7,14 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      gsap:
-        specifier: ^3.12.5
-        version: 3.12.5
-    dependencies:
-      air-datepicker:
-        specifier: ^3.5.3
-        version: 3.5.3
     devDependencies:
       '@fancyapps/ui':
         specifier: ^4.0.31
@@ -31,12 +23,18 @@ importers:
       '@types/yandex-maps':
         specifier: ^2.1.36
         version: 2.1.36
+      air-datepicker:
+        specifier: ^3.5.3
+        version: 3.5.3
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
       css-loader:
         specifier: ^7.1.2
         version: 7.1.2(webpack@5.91.0(webpack-cli@5.1.4))
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
       html-webpack-plugin:
         specifier: ^5.6.0
         version: 5.6.0(webpack@5.91.0(webpack-cli@5.1.4))
