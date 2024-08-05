@@ -27,6 +27,19 @@
     .field {
         max-width: 450px;
 
+        .pseudo {
+            @include utils.square(32px);
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            color: transparent;
+            cursor: pointer;
+            text-shadow: 0 0 0 transparent;
+            background-color: transparent;
+            border: none;
+        }
+
         &._period {
             display: flex;
             justify-content: space-between;
@@ -97,6 +110,8 @@
         &-icon {
             @include utils.bg-defaults(auto);
             @include utils.square(24px);
+            z-index: 50;
+            cursor: pointer;
             opacity: 0.5;
             background-image: url('assets/icons/tooltip.svg');
 
@@ -148,6 +163,7 @@
 
         &-options {
             position: absolute;
+            z-index: 10;
             top: 60px;
             left: 0;
             padding: 20px;
