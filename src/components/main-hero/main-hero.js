@@ -22,17 +22,28 @@ new Swiper('.main-hero .swiper', {
     },
     on: {
         init: (swiper) => {
-            const bullets = document.querySelectorAll('.swiper-pagination-bullet')
+            const bullets = swiper.el.querySelectorAll('.swiper-pagination-bullet')
             bullets.forEach((bullet) => {
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                svg.setAttribute('viewBox', '0 0 48 48')
+
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+
+                circle.setAttribute('cx', '24')
+                circle.setAttribute('cy', '24')
+                circle.setAttribute('r', '20')
+
+                svg.append(circle)
                 const span = document.createElement('span')
-                span.innerHTML = `<svg viewBox="0 0 48 48">
-                  <circle cx="24" cy="24" r="20" class="loader"></circle>
-                </svg>`
+                span.append(svg)
 
                 bullet.append(span)
+
+                const length = circle.getTotalLength()
+                bullet.style.setProperty('--length', `${Math.trunc(length)}`)
             })
 
-            swiper.el.style.setProperty('--time', `${DELAY + 1300}ms`)
+            swiper.el.style.setProperty('--time', `${DELAY}ms`)
         },
     },
 })

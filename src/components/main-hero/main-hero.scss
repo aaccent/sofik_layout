@@ -92,8 +92,8 @@
                         height: 100%;
                         fill: none;
 
-                        .loader {
-                            stroke-dasharray: 150, 150;
+                        circle {
+                            stroke-dasharray: var(--length), var(--length);
                             stroke-dashoffset: 0;
                             stroke-linecap: round;
                             stroke: var(--375C);
@@ -108,7 +108,7 @@
                         stroke-dashoffset: 0;
                     }
                     100% {
-                        stroke-dashoffset: -150;
+                        stroke-dashoffset: var(--length);
                     }
                 }
 
@@ -126,7 +126,7 @@
                         background-color: var(--375C);
                     }
 
-                    .loader {
+                    svg circle {
                         animation: var(--time) 1 slide-loader linear;
                     }
                 }
