@@ -3,6 +3,11 @@
 .main-hero {
     padding: 0;
 
+    .stroke {
+        stroke: red;
+        stroke-width: 10;
+    }
+
     &__slide {
         width: 100%;
         height: 960px;
@@ -62,14 +67,68 @@
 
             .swiper-pagination-bullet {
                 @include utils.square(20px);
+                position: relative;
                 margin: 0 !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 opacity: 1 !important;
                 background-color: transparent;
-                border: 1px solid var(--375C);
+
+                span {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+
+                    svg {
+                        stroke-width: 4px;
+                        position: absolute;
+                        z-index: 10;
+                        top: 0;
+                        left: 0;
+                        transform-origin: center center;
+                        width: 100%;
+                        height: 100%;
+                        fill: none;
+
+                        .loader {
+                            stroke-dasharray: 150, 150;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke: var(--375C);
+                            transform-origin: center;
+                            rotate: -90deg;
+                        }
+                    }
+                }
+
+                @keyframes slide-loader {
+                    0% {
+                        stroke-dashoffset: 0;
+                    }
+                    100% {
+                        stroke-dashoffset: -150;
+                    }
+                }
 
                 &-active {
-                    background-color: var(--375C);
-                    @include utils.square(10px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border-color: transparent;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        @include utils.circle(10px);
+                        background-color: var(--375C);
+                    }
+
+                    .loader {
+                        animation: var(--time) 1 slide-loader linear;
+                    }
                 }
             }
         }
