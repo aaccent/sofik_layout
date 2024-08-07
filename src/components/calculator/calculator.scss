@@ -9,9 +9,15 @@
         transform: translateY(-50%);
         display: block;
         @include utils.circle(718px);
-        opacity: 0.2;
-        filter: blur(1000px);
+        pointer-events: none;
+        opacity: 0.3;
+        filter: blur(440px);
         background-color: hsla(73, 61%, 56%, 1);
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
     }
 
     &:has(.calculator__selector._active) {
