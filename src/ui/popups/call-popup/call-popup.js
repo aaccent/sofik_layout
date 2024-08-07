@@ -24,7 +24,7 @@ void (function () {
         const rateInput = document.querySelector('.calculator__field-rate')
         rate.setAttribute('type', 'hidden')
         rate.setAttribute('name', 'calc-rate')
-        rate.value = rateInput.value
+        rate.value = rateInput.dataset.value
 
         const result = document.createElement('input')
         const resultInput = document.querySelector('.calculator__field-output')
