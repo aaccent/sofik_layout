@@ -3,10 +3,24 @@ import { openPopup } from 'features/popup/popup'
 void (function () {
     const calculatorForm = document.querySelector('form.calculator__form')
     const popupForm = document.querySelector('.call-popup form')
+    const popup = document.querySelector('.call-popup')
 
     calculatorForm.addEventListener('submit', (e) => {
         openPopup('call')
         e.preventDefault()
+
+        const container = document.createElement('div')
+        container.className = 'hidden-inputs'
+        container.style.position = 'absolute'
+        container.style.visibility = 'invisible'
+
+        popup.addEventListener(
+            'closed',
+            () => {
+                container.remove()
+            },
+            { once: true },
+        )
 
         const amount = document.createElement('input')
         const amountInput = document.querySelector('input[name="amount"]')
@@ -32,6 +46,7 @@ void (function () {
         result.setAttribute('name', 'calc-result')
         result.value = resultInput.value
 
-        popupForm.append(amount, period, rate, result)
+        container.append(amount, period, rate, result)
+        popupForm.append(container)
     })
 })()
