@@ -5,7 +5,7 @@ void (function () {
     const popupForm = document.querySelector('.call-popup form')
     const popup = document.querySelector('.call-popup')
 
-    calculatorForm.addEventListener('submit', (e) => {
+    calculatorForm?.addEventListener('submit', (e) => {
         openPopup('call')
         e.preventDefault()
 
