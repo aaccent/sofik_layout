@@ -134,7 +134,7 @@
         }
 
         &-btn {
-            @include utils.bg-defaults(auto);
+            @include utils.bg-defaults(cover);
             @include utils.square(24px);
             background-image: url('assets/icons/slider-arrow.svg');
 
