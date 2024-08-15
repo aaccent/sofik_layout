@@ -63,6 +63,7 @@
             position: static;
             display: flex;
             gap: 20px;
+            justify-content: center;
             align-items: center;
 
             .swiper-pagination-bullet {
@@ -135,7 +136,8 @@
 
         &-btn {
             @include utils.bg-defaults(cover);
-            @include utils.square(24px);
+            min-width: 24px;
+            min-height: 24px;
             background-image: url('assets/icons/slider-arrow.svg');
 
             &._prev {
