@@ -39,7 +39,12 @@ new Swiper('.main-hero .swiper', {
 
                 bullet.append(span)
 
-                const length = circle.getTotalLength()
+                let length
+                try {
+                    length = circle.getTotalLength()
+                } catch {
+                    length = 0
+                }
                 bullet.style.setProperty('--length', `${Math.trunc(length)}`)
             })
 
