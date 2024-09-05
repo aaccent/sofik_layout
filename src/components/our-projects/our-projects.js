@@ -5,6 +5,7 @@ new Swiper('.our-projects .swiper', {
     modules: [Scrollbar],
     scrollbar: {
         el: '.swiper-scrollbar',
+        draggable: true,
     },
     slidesPerView: 1.2,
     spaceBetween: 20,
