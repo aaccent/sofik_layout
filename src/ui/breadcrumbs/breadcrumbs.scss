@@ -35,6 +35,7 @@
     .breadcrumbs:has(+ .addresses, + .page-title) {
         margin-top: 30px;
         padding-left: 10px;
+        flex-wrap: wrap;
     }
 
     .breadcrumbs {

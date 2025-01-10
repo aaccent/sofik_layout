@@ -101,6 +101,10 @@
 
         &-content {
             justify-content: space-between;
+
+            &:has(.menu-item._opened) .header__button {
+                z-index: 0;
+            }
         }
 
         &__button-menu {
@@ -114,6 +118,7 @@
             &._menu-opened ~ .menu,
             &._menu-opened ~ .header__button {
                 display: block;
+                overflow: auto;
             }
         }
 
