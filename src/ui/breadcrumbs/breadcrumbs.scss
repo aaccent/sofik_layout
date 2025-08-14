@@ -4,7 +4,7 @@
     position: static;
     margin-top: 50px;
     margin-bottom: 10px;
-    padding-left: 30px;
+    padding-left: 120px;
     color: var(--black);
 }
 
@@ -16,7 +16,7 @@
     position: absolute;
     z-index: 3;
     top: 63px;
-    left: 130px;
+    left: calc(var(--container-padding) + 120px);
     display: flex;
     gap: 10px;
     color: var(--white);
