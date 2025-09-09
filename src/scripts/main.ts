@@ -2,6 +2,7 @@ import '@/features/popup/popup'
 import '@/features/forms'
 import '@/features/inputMask'
 import '@/features/fancybox'
+import '@/features/popupTimeout'
 
 import '@/layout/header/header.js'
 import '@/layout/menu/menu.js'

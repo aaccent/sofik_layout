@@ -1,0 +1,50 @@
+include layout/utils
+-
+    var list = [
+        {
+            number: '6 лет',
+            text: 'в рынке',
+            buttonText: 'Медиацентр',
+            link: '/mediacenter/'
+        },{
+            number: '45 +',
+            text: 'Банков-партнеров в один клик',
+            buttonText: 'Все банки',
+            link: '#our-clients'
+        },{
+            number: '15 000 + ',
+            text: 'выданных банковских гарантий',
+            buttonText: 'Наши контакты',
+            link: '/contacts/'
+        },{
+            number: '10+',
+            text: 'профессионалов в команде',
+            buttonText: 'Наша команда',
+            link: '/company/'
+        },{
+            number: '0 %',
+            text: 'наша комиссия за услуги',
+            buttonText: '',
+            link: ''
+        },{
+            number: '1 день',
+            text: 'средний срок выпуска гарантии ',
+            buttonText: '',
+            link: ''
+        },{
+            number: '92 %',
+            text: 'заявок получают положительное решение',
+            buttonText: '',
+            link: ''
+        },
+    ]
+
++section.numbers
+    .section__title.numbers__title Софик в цифрах
+    .numbers__list
+        each item in list
+            .numbers__item
+                .numbers__item-number= item.number
+                .numbers__item-text= item.text
+                if item.buttonText
+                    +anchor(item.link).numbers__item-button.button= item.buttonText

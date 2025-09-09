@@ -2,10 +2,10 @@
 
 .services {
     &-list {
-        row-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
         margin-top: 50px;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        gap: 30px;
         justify-content: space-between;
     }
 

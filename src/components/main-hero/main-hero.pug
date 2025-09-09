@@ -7,9 +7,10 @@ include layout/utils
                 .main-hero__slide.swiper-slide
                     .main-hero__slide-content
                         if index === 0
-                            h1.main-hero__slide-title Заголовок слайда #{ index + 1 } Банковские гарантии по низким ставкам из любой точки России
+                            h1.main-hero__slide-title Банковские гарантии по низким ставкам из любой точки России
                         else
-                            .main-hero__slide-title Заголовок слайда #{ index + 1 } Банковские гарантии по низким ставкам из любой точки России
+                            .main-hero__slide-title Банковские гарантии по низким ставкам из любой точки России
+                        .main-hero__slide-subtitle Помогаем получить гарантии для тендеров, контрактов и авансов — онлайн, быстро и без лишней бюрократии
                         if index === 0
                             +popupBtn('call').main-hero__slide-button Открыть попап
                         else
